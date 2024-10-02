@@ -10,15 +10,17 @@ public class RotationRange : MonoBehaviour
 
     private float lifeRate;
     private SpriteRenderer mySpriteRenderer;
+    private Color myColor;
     private void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        myColor = GetComponent<SpriteRenderer>().color;
     }
     private void Update()
     {
         lifeTimer += Time.deltaTime;
         lifeRate = lifeTimer / lifeTime;
-        mySpriteRenderer.color = new Color(1, 0.5f, 0, lifeRate);
+        mySpriteRenderer.color = new Color(myColor.r, myColor.g, myColor.b, lifeRate);
         if (lifeRate > 1)
         {
             Destroy(gameObject);
