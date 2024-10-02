@@ -228,6 +228,15 @@ public class Player : MonoBehaviour
 
             int playerRnageInt = (int)Vector2.Distance(myTransform.position, axisOfRotationTransform.position);
             playerRangeText.text = playerRnageInt.ToString();
+            
+            if(playerRnageInt < playerRangeMax)
+            {
+                playerRangeText.color = Color.white;
+            }
+            else
+            {
+                playerRangeText.color = Color.red;
+            }
 
             //axisOfRotationTransform.eulerAngles += rateNow * Time.deltaTime * rotationValue;
             clickclickIntervalCanvasTransform.rotation = Quaternion.identity;
