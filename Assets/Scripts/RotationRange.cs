@@ -15,10 +15,11 @@ public class RotationRange : MonoBehaviour
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         myColor = GetComponent<SpriteRenderer>().color;
+        lifeTimer = lifeTime;
     }
     private void Update()
     {
-        lifeTimer += Time.deltaTime;
+        lifeTimer -= Time.deltaTime;
         lifeRate = lifeTimer / lifeTime;
         mySpriteRenderer.color = new Color(myColor.r, myColor.g, myColor.b, lifeRate);
         if (lifeRate > 1)

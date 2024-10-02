@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
     private Transform myTransform = null;
     private float radius;
     private Vector3 rotationValue = Vector3.zero;
+    private SpriteRenderer axisOfRotationSpriteRenderer = null;
     private bool isSlowRate = false;
     private bool isClickInterval = false;
     private bool isHitStop = false;
@@ -178,6 +179,7 @@ public class Player : MonoBehaviour
     {
         myTransform = transform;
         //myTransform.parent = axisOfRotationTransform;
+        axisOfRotationSpriteRenderer = axisOfRotationTransform.gameObject.GetComponent<SpriteRenderer>();
 
         nowHp = maxHp;
 
@@ -231,11 +233,11 @@ public class Player : MonoBehaviour
             
             if(playerRnageInt < playerRangeMax)
             {
-                playerRangeText.color = Color.white;
+                axisOfRotationSpriteRenderer.color = Color.black;
             }
             else
             {
-                playerRangeText.color = Color.red;
+                axisOfRotationSpriteRenderer.color = Color.red;
             }
 
             //axisOfRotationTransform.eulerAngles += rateNow * Time.deltaTime * rotationValue;
