@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
     private float radius;
     private Vector3 rotationValue = Vector3.zero;
     private SpriteRenderer axisOfRotationSpriteRenderer = null;
+    private int lastDamage = 0;
     private bool isSlowRate = false;
     private bool isClickInterval = false;
     private bool isHitStop = false;
@@ -230,8 +231,8 @@ public class Player : MonoBehaviour
 
             int playerRnageInt = (int)Vector2.Distance(myTransform.position, axisOfRotationTransform.position);
             playerRangeText.text = playerRnageInt.ToString();
-            
-            if(playerRnageInt < playerRangeMax)
+
+            if (playerRnageInt < playerRangeMax)
             {
                 axisOfRotationSpriteRenderer.color = Color.black;
             }
@@ -287,7 +288,7 @@ public class Player : MonoBehaviour
         if (nowHp <= 0)
         {
             isGameOver = true;
-            StageRoot.Instance.GameOver();
+            StageRoot.Instance.GameOver(lastDamage);
         }
     }
 
@@ -317,9 +318,11 @@ public class Player : MonoBehaviour
                 collision.GetComponent<Enemy>().Damage(1);
                 break;
             case "EnemyAttack":
+                lastDamage = collision.GetComponent<DamageSource>().damageType;
                 Damage(1);
                 break;
             case "DamageWall":
+                lastDamage = collision.GetComponent<DamageSource>().damageType;
                 Damage(1);
                 switch (directionRotation)
                 {

@@ -104,7 +104,7 @@ public class StageRoot : MonoBehaviour
         stageGoalUIObject.SetActive(true);
     }
 
-    public void GameOver()
+    public void GameOver(int value)
     {
         Time.timeScale = 0;
 
@@ -112,23 +112,15 @@ public class StageRoot : MonoBehaviour
                                         Mathf.RoundToInt(playerTransform.position.y),
                                         Mathf.RoundToInt(playerTransform.position.z));
         Debug.Log("0");
-        //for (int i = 0; i < airTiles.Count; i++)
-        //{
-        //    Debug.Log(airTilemap.GetTile(tempVector3Int));
-        //    if (airTilemap.GetTile(tempVector3Int) == airTiles[i])
-        //    {
-        //        Debug.Log("1");
-        //        for (int j = 0; j < dataScriptableObject.gameOverSprites.Count; j++)
-        //        {
-        //            if (dataScriptableObject.selectStageValue == dataScriptableObject.gameOverSprites[j].stgaeValue)
-        //            {
-        //                Debug.Log("2");
-        //                gameOverImage.sprite = dataScriptableObject.gameOverSprites[j].gameOverSpritesValue[i];
-        //                Debug.Log(tempVector3Int);
-        //            }
-        //        }
-        //    }
-        //}
+        for (int j = 0; j < dataScriptableObject.gameOverSprites.Count; j++)
+        {
+            if (dataScriptableObject.selectStageValue == dataScriptableObject.gameOverSprites[j].stgaeValue)
+            {
+                Debug.Log("2");
+                gameOverImage.sprite = dataScriptableObject.gameOverSprites[j].gameOverSpritesValue[value];
+                Debug.Log(tempVector3Int);
+            }
+        }
 
         gameOverUIObject.SetActive(true);
     }

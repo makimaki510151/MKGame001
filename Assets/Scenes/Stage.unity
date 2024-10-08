@@ -633,6 +633,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1939349730}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (12)
@@ -1520,6 +1524,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (5)
@@ -1722,6 +1730,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (10)
@@ -1867,6 +1879,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1939349730}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (11)
@@ -2703,7 +2719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &576730641
 Transform:
   m_ObjectHideFlags: 0
@@ -3129,6 +3145,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (8)
@@ -3342,6 +3362,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1939349730}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (5)
@@ -3956,6 +3980,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1939349730}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (15)
@@ -4167,6 +4195,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (7)
@@ -4741,6 +4773,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (15)
@@ -4811,6 +4847,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (11)
@@ -5891,6 +5931,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (12)
@@ -6227,6 +6271,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (6)
@@ -6297,6 +6345,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (14)
@@ -6563,6 +6615,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1939349730}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (17)
@@ -6913,6 +6969,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (9)
@@ -7117,6 +7177,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (16)
@@ -7715,7 +7779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1916668499
 Transform:
   m_ObjectHideFlags: 0
@@ -7807,6 +7871,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1939349730}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (16)
@@ -8420,6 +8488,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 572298713}
     m_Modifications:
+    - target: {fileID: 2150114515648353380, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2900515119730589822, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
       propertyPath: m_Name
       value: DamageWall (13)
