@@ -51,6 +51,8 @@ public class Player : MonoBehaviour
     private int maxHp = 3;
     [SerializeField, Header("プレイヤーと軸との距離を表示するテキスト")]
     private TMP_Text playerRangeText = null;
+    [SerializeField, Header("プレイヤーと軸との線")]
+    private LineRenderer line = null;
     private int nowHp;
 
     enum DirectionRotation
@@ -184,6 +186,10 @@ public class Player : MonoBehaviour
 
         nowHp = maxHp;
 
+        line.startWidth = 0.1f;
+        line.endWidth = 0.1f;
+        line.positionCount = 2;
+        
         LeftRotation();
         radius = Vector2.Distance(myTransform.position, axisOfRotationTransform.position);
 
@@ -201,14 +207,6 @@ public class Player : MonoBehaviour
     {
         if (!isPause)
         {
-            //if (axisOfRotationMoveTimer < axisOfRotationMoveTime)
-            //{
-            //    axisOfRotationTransform.position = Vector2.Lerp(axisOfRotationStartPos, axisOfRotationMovePos, axisOfRotationMoveTimer / axisOfRotationMoveTime);
-            //    axisOfRotationMoveTimer += Time.deltaTime;
-
-            //}
-
-
             if (isSlowRate)
             {
                 slowTime += Time.deltaTime;
@@ -264,6 +262,9 @@ public class Player : MonoBehaviour
                     Time.timeScale = 1;
                 }
             }
+
+            line.SetPosition(0, myTransform.position);
+            line.SetPosition(1, axisOfRotationTransform.position);
         }
     }
     private void LeftRotation()
