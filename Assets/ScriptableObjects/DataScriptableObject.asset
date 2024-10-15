@@ -35,7 +35,7 @@ MonoBehaviour:
   - stageValue: {x: 1, y: 1}
     nameSprite: {fileID: 21300000, guid: 505e5cd99c14afd479885296dfcc3103, type: 3}
     explanationSprite: {fileID: 21300000, guid: 7876d1119c998e14d987b174ddee7a66, type: 3}
-    iconSprite: {fileID: 21300000, guid: cdfdae65579e92a4b9c5a175496e07ff, type: 3}
+    iconSprite: {fileID: 21300000, guid: 1eff3d570cede4a44b42e45d663115e0, type: 3}
     stageSprite: {fileID: 21300000, guid: 2c0c922fdc69ecf4dacfae009218d685, type: 3}
     storySprites:
     - {fileID: 21300000, guid: 2c0c922fdc69ecf4dacfae009218d685, type: 3}

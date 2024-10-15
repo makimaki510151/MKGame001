@@ -157,7 +157,7 @@ public class StageSlectRoot : MonoBehaviour
                 thirdIconImage.sprite = dataScriptableObject.stageContents[i].iconSprite;
                 for (int j = 0; j < thirdStoryImages.Length; j++)
                 {
-                    thirdStoryImages[i].sprite = dataScriptableObject.stageContents[i].storySprites[j];
+                    thirdStoryImages[j].sprite = dataScriptableObject.stageContents[i].storySprites[j];
                 }
             }
         }

@@ -15,6 +15,10 @@ public class StageRoot : MonoBehaviour
     [SerializeField]
     private Transform playerTransform = null;
     [SerializeField]
+    private SpriteRenderer playerSpriteRenderer = null;
+    [SerializeField]
+    private Transform playerSpriteTransform = null;
+    [SerializeField]
     private Transform coreTransform = null;
     [SerializeField]
     private bool isCameraPlayer = true;
@@ -46,6 +50,13 @@ public class StageRoot : MonoBehaviour
 
     void Start()
     {
+        for (int i = 0; i < dataScriptableObject.stageContents.Count; i++)
+        {
+            if (dataScriptableObject.selectStageValue == dataScriptableObject.stageContents[i].stageValue)
+            {
+                playerSpriteRenderer.sprite = dataScriptableObject.stageContents[i].iconSprite;
+            }
+        }
         Time.timeScale = 1;
         cameraTransform = Camera.main.transform;
         Application.targetFrameRate = 60;
@@ -53,6 +64,8 @@ public class StageRoot : MonoBehaviour
 
     void Update()
     {
+        playerSpriteTransform.rotation = Quaternion.Euler(0, 0, 0);
+
         if (Time.timeScale == 1)
         {
             if (isCameraPlayer)
@@ -72,7 +85,7 @@ public class StageRoot : MonoBehaviour
             }
         }
     }
-    
+
     public void SetStartPlayerPos(Vector3 vector3)
     {
         vector3.x += 1;
