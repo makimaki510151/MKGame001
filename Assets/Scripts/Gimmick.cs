@@ -19,7 +19,6 @@ public class Gimmick : MonoBehaviour
         nowHp -= damageValue;
         if(nowHp <= 0)
         {
-            StageRoot.Instance.LastGimmickCheck();
             Destroy(gameObject);
         }
     }

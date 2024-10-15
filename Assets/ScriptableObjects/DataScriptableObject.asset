@@ -16,18 +16,46 @@ MonoBehaviour:
   seVolume: 0.5
   bgmVolume: 0.5
   gameOverSprites:
-  - stgaeValue: {x: 1, y: 1}
+  - stageValue: {x: 1, y: 1}
     gameOverSpritesValue:
     - {fileID: 21300000, guid: 2c0c922fdc69ecf4dacfae009218d685, type: 3}
     - {fileID: 21300000, guid: 6b826e8320c321e48a1606cb7e9b269d, type: 3}
     - {fileID: 21300000, guid: fb3ebc961ed56d2428a0ee0367131507, type: 3}
-  - stgaeValue: {x: 1, y: 2}
+  - stageValue: {x: 1, y: 2}
     gameOverSpritesValue:
     - {fileID: 21300000, guid: 2c0c922fdc69ecf4dacfae009218d685, type: 3}
     - {fileID: 21300000, guid: 6b826e8320c321e48a1606cb7e9b269d, type: 3}
     - {fileID: 21300000, guid: fb3ebc961ed56d2428a0ee0367131507, type: 3}
-  - stgaeValue: {x: 1, y: 3}
+  - stageValue: {x: 1, y: 3}
     gameOverSpritesValue:
     - {fileID: 21300000, guid: 2c0c922fdc69ecf4dacfae009218d685, type: 3}
     - {fileID: 21300000, guid: 6b826e8320c321e48a1606cb7e9b269d, type: 3}
     - {fileID: 21300000, guid: fb3ebc961ed56d2428a0ee0367131507, type: 3}
+  stageContents:
+  - stageValue: {x: 1, y: 1}
+    nameSprite: {fileID: 21300000, guid: 505e5cd99c14afd479885296dfcc3103, type: 3}
+    explanationSprite: {fileID: 21300000, guid: 7876d1119c998e14d987b174ddee7a66, type: 3}
+    iconSprite: {fileID: 21300000, guid: cdfdae65579e92a4b9c5a175496e07ff, type: 3}
+    stageSprite: {fileID: 21300000, guid: 2c0c922fdc69ecf4dacfae009218d685, type: 3}
+    storySprites:
+    - {fileID: 21300000, guid: 2c0c922fdc69ecf4dacfae009218d685, type: 3}
+    - {fileID: 21300000, guid: 6b826e8320c321e48a1606cb7e9b269d, type: 3}
+    - {fileID: 21300000, guid: fb3ebc961ed56d2428a0ee0367131507, type: 3}
+  - stageValue: {x: 1, y: 2}
+    nameSprite: {fileID: 0}
+    explanationSprite: {fileID: 0}
+    iconSprite: {fileID: 0}
+    stageSprite: {fileID: 0}
+    storySprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - stageValue: {x: 1, y: 3}
+    nameSprite: {fileID: 0}
+    explanationSprite: {fileID: 0}
+    iconSprite: {fileID: 0}
+    stageSprite: {fileID: 0}
+    storySprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}

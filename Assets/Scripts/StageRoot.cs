@@ -23,8 +23,6 @@ public class StageRoot : MonoBehaviour
     [SerializeField]
     private float cameraYPos = 10;
     [SerializeField]
-    private GameObject lastGimmickObject = null;
-    [SerializeField]
     private GameObject stageGoalUIObject = null;
     [SerializeField]
     private List<TMP_Text> resultTextList = new();
@@ -37,8 +35,6 @@ public class StageRoot : MonoBehaviour
 
 
     private Transform cameraTransform = null;
-    private GameObject[] allGimmickObjects;
-    private int deadGimmickCount = 0;
     private bool isButtonGo = false;
 
     private Vector3Int tempVector3Int = new(0, 0, 0);
@@ -52,7 +48,6 @@ public class StageRoot : MonoBehaviour
     {
         Time.timeScale = 1;
         cameraTransform = Camera.main.transform;
-        allGimmickObjects = GameObject.FindGameObjectsWithTag("Gimmick");
         Application.targetFrameRate = 60;
     }
 
@@ -77,14 +72,7 @@ public class StageRoot : MonoBehaviour
             }
         }
     }
-    public void LastGimmickCheck()
-    {
-        deadGimmickCount++;
-        if (allGimmickObjects.Length <= deadGimmickCount)
-        {
-            lastGimmickObject.SetActive(false);
-        }
-    }
+    
     public void SetStartPlayerPos(Vector3 vector3)
     {
         vector3.x += 1;
@@ -114,7 +102,7 @@ public class StageRoot : MonoBehaviour
         Debug.Log("0");
         for (int j = 0; j < dataScriptableObject.gameOverSprites.Count; j++)
         {
-            if (dataScriptableObject.selectStageValue == dataScriptableObject.gameOverSprites[j].stgaeValue)
+            if (dataScriptableObject.selectStageValue == dataScriptableObject.gameOverSprites[j].stageValue)
             {
                 Debug.Log("2");
                 gameOverImage.sprite = dataScriptableObject.gameOverSprites[j].gameOverSpritesValue[value];
