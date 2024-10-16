@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
-
+[System.Serializable]
+class DisplayStage
+{
+    public Vector2 stageValue = new (1, 1);
+    public GameObject stageObject = null;
+}
 
 public class StageRoot : MonoBehaviour
 {
+    [SerializeField, Tooltip("デバッグ")]
+    private bool isDebug = false;
+    [SerializeField]
+    private Vector2 debugVector2 = new(1, 1);
+
+    [Header("通常")]
+
     public DataScriptableObject dataScriptableObject = null;
 
     [SerializeField]
@@ -37,6 +48,8 @@ public class StageRoot : MonoBehaviour
     [SerializeField]
     private Image gameOverImage = null;
 
+    [SerializeField]
+    List<DisplayStage> displayStages = new();
 
     private Transform cameraTransform = null;
     private bool isButtonGo = false;
@@ -50,6 +63,30 @@ public class StageRoot : MonoBehaviour
 
     void Start()
     {
+        if (!isDebug)
+        {
+            for (int i = 0; i < displayStages.Count; i++)
+            {
+                displayStages[i].stageObject.SetActive(false);
+                if (displayStages[i].stageValue == dataScriptableObject.selectStageValue)
+                {
+                    displayStages[i].stageObject.SetActive(true);
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < displayStages.Count; i++)
+            {
+                displayStages[i].stageObject.SetActive(false);
+                if (displayStages[i].stageValue == debugVector2)
+                {
+                    displayStages[i].stageObject.SetActive(true);
+                }
+            }
+        }
+
+
         for (int i = 0; i < dataScriptableObject.stageContents.Count; i++)
         {
             if (dataScriptableObject.selectStageValue == dataScriptableObject.stageContents[i].stageValue)
