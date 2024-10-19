@@ -11,6 +11,7 @@ TagManager:
   - EnemyAttack
   - DamageWall
   - ClickBox
+  - Item
   layers:
   - Default
   - TransparentFX

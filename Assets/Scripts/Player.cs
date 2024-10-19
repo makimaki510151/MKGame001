@@ -315,6 +315,9 @@ public class Player : MonoBehaviour
             case "Goal":
                 StageRoot.Instance.StgaeGoal(lClickCount, invertCount, clearTime, slowTime);
                 break;
+            case "Item":
+                StageRoot.Instance.GetItem(collision.gameObject);
+                break;
             case "Enemy":
                 collision.GetComponent<Enemy>().Damage(1);
                 break;

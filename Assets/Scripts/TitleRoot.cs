@@ -22,9 +22,7 @@ public class TitleRoot : MonoBehaviour
     private Slider bgmSlider = null;
 
 
-    [SerializeField]
-    private GameObject keyConfigSettingObject = null;
-
+    
     private bool isButtonGo = false;
 
     private void Start()
@@ -57,7 +55,6 @@ public class TitleRoot : MonoBehaviour
 
     public void ButtonSoundSetting()
     {
-        keyConfigSettingObject.SetActive(false);
         soundSettingObject.SetActive(true);
     }
 

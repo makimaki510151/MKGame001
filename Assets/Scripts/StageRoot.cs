@@ -8,10 +8,16 @@ using UnityEngine.UI;
 [System.Serializable]
 class DisplayStage
 {
-    public Vector2 stageValue = new (1, 1);
+    public Vector2 stageValue = new(1, 1);
     public GameObject stageObject = null;
 }
 
+[System.Serializable]
+class DestroyItem
+{
+    public GameObject item;
+    public Vector2 stageValue = Vector2.zero;
+}
 public class StageRoot : MonoBehaviour
 {
     [SerializeField, Tooltip("デバッグ")]
@@ -49,12 +55,13 @@ public class StageRoot : MonoBehaviour
     private Image gameOverImage = null;
 
     [SerializeField]
-    List<DisplayStage> displayStages = new();
+    private List<DisplayStage> displayStages = new();
+    [SerializeField]
+    private List<DestroyItem> itemObjects = new();
 
     private Transform cameraTransform = null;
     private bool isButtonGo = false;
 
-    private Vector3Int tempVector3Int = new(0, 0, 0);
     public static StageRoot Instance { get; private set; }
     private void Awake()
     {
@@ -92,6 +99,16 @@ public class StageRoot : MonoBehaviour
             if (dataScriptableObject.selectStageValue == dataScriptableObject.stageContents[i].stageValue)
             {
                 playerSpriteRenderer.sprite = dataScriptableObject.stageContents[i].iconSprite;
+                if (dataScriptableObject.stageContents[i].isGetScroll)
+                {
+                    for (int j = 0; j < itemObjects.Count; j++)
+                    {
+                        if (itemObjects[j].stageValue == dataScriptableObject.selectStageValue)
+                        {
+                            Destroy(itemObjects[j].item);
+                        }
+                    }
+                }
             }
         }
         Time.timeScale = 1;
@@ -146,17 +163,11 @@ public class StageRoot : MonoBehaviour
     {
         Time.timeScale = 0;
 
-        tempVector3Int = new Vector3Int(Mathf.RoundToInt(playerTransform.position.x),
-                                        Mathf.RoundToInt(playerTransform.position.y),
-                                        Mathf.RoundToInt(playerTransform.position.z));
-        Debug.Log("0");
-        for (int j = 0; j < dataScriptableObject.gameOverSprites.Count; j++)
+        for (int j = 0; j < dataScriptableObject.stageContents.Count; j++)
         {
-            if (dataScriptableObject.selectStageValue == dataScriptableObject.gameOverSprites[j].stageValue)
+            if (dataScriptableObject.selectStageValue == dataScriptableObject.stageContents[j].stageValue)
             {
-                Debug.Log("2");
-                gameOverImage.sprite = dataScriptableObject.gameOverSprites[j].gameOverSpritesValue[value];
-                Debug.Log(tempVector3Int);
+                gameOverImage.sprite = dataScriptableObject.stageContents[j].gameOverSpritesValue[value];
             }
         }
 
@@ -209,5 +220,16 @@ public class StageRoot : MonoBehaviour
         playerTransform.gameObject.SetActive(false);
         coreTransform.gameObject.SetActive(false);
         mainCanvas.SetActive(false);
+    }
+    public void GetItem(GameObject _gameObject)
+    {
+        for (int i = 0; i < dataScriptableObject.stageContents.Count; i++)
+        {
+            if (dataScriptableObject.selectStageValue == dataScriptableObject.stageContents[i].stageValue)
+            {
+                dataScriptableObject.stageContents[i].isGetScroll = true;
+                Destroy(_gameObject);
+            }
+        }
     }
 }
