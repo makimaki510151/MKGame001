@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -59,8 +60,20 @@ public class StageRoot : MonoBehaviour
     [SerializeField]
     private List<DestroyItem> itemObjects = new();
 
+    [SerializeField]
+    private GameObject pauseUIObject = null;
+    [SerializeField]
+    private float pauseCloseTime = 3;
+    private float pauseCloseTimer = 0;
+    [SerializeField]
+    private TMP_Text pauseCloseText = null;
+    [SerializeField]
+    private Player playerSpript = null;
+
+
     private Transform cameraTransform = null;
     private bool isButtonGo = false;
+    private bool isPauseClose = false;
 
     public static StageRoot Instance { get; private set; }
     private void Awake()
@@ -114,6 +127,7 @@ public class StageRoot : MonoBehaviour
         Time.timeScale = 1;
         cameraTransform = Camera.main.transform;
         Application.targetFrameRate = 60;
+        pauseCloseTimer = pauseCloseTime;
     }
 
     void Update()
@@ -136,6 +150,23 @@ public class StageRoot : MonoBehaviour
                 tempPos.y = cameraYPos;
                 tempPos.z = -10;
                 cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, tempPos, 0.01f);
+            }
+        }
+        else
+        {
+            if (isPauseClose)
+            {
+                pauseCloseTimer -= Time.unscaledDeltaTime;
+
+                pauseCloseText.text = Math.Ceiling(pauseCloseTimer).ToString();
+                if (pauseCloseTimer <= 0)
+                {
+                    pauseCloseTimer = pauseCloseTime;
+                    playerSpript.IsPauseChange(false);
+                    Time.timeScale = 1;
+                    pauseCloseText.text = "";
+                    isPauseClose = false;
+                }
             }
         }
     }
@@ -231,5 +262,15 @@ public class StageRoot : MonoBehaviour
                 Destroy(_gameObject);
             }
         }
+    }
+    public void PauseOpen()
+    {
+        pauseUIObject.SetActive(true);
+    }
+
+    public void PauseClose()
+    {
+        pauseUIObject.SetActive(false);
+        isPauseClose = true;
     }
 }

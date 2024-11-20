@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -163,13 +164,13 @@ public class Player : MonoBehaviour
             }
         }
     }
-    private void OnPause(InputAction.CallbackContext context)
+    public void OnPause(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             if (isPause)
             {
-
+                StageRoot.Instance.PauseClose();
             }
             else
             {
@@ -345,5 +346,11 @@ public class Player : MonoBehaviour
     {
         isPause = true;
         Time.timeScale = 0;
+        StageRoot.Instance.PauseOpen();
+    }
+
+    public void IsPauseChange(bool value)
+    {
+        isPause = value;
     }
 }
