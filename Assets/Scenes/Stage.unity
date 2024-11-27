@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coreTransform: {fileID: 375838707}
   imageTransform: {fileID: 1257437364}
-  rotatingSpeed: 30
+  rotatingSpeed: 75
   isRightRotation: 1
 --- !u!114 &133727626
 MonoBehaviour:
@@ -11018,7 +11018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coreTransform: {fileID: 1646526004}
   imageTransform: {fileID: 275597587}
-  rotatingSpeed: 30
+  rotatingSpeed: 75
   isRightRotation: 1
 --- !u!114 &1599601513
 MonoBehaviour:
@@ -13281,7 +13281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coreTransform: {fileID: 186984472}
   imageTransform: {fileID: 245827209}
-  rotatingSpeed: 30
+  rotatingSpeed: 75
   isRightRotation: 1
 --- !u!114 &1988792982
 MonoBehaviour:
@@ -13664,7 +13664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coreTransform: {fileID: 446789064}
   imageTransform: {fileID: 521341240}
-  rotatingSpeed: 30
+  rotatingSpeed: 75
   isRightRotation: 1
 --- !u!114 &2033418684
 MonoBehaviour:
