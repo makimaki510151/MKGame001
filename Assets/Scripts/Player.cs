@@ -310,9 +310,6 @@ public class Player : MonoBehaviour
                 }
                 invertCount++;
                 break;
-            case "Gimmick":
-                collision.GetComponent<Gimmick>().Damage(1);
-                break;
             case "Goal":
                 StageRoot.Instance.StgaeGoal(lClickCount, invertCount, clearTime, slowTime);
                 break;

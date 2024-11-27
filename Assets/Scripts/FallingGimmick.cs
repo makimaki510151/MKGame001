@@ -13,6 +13,9 @@ public class FallingGimmick : MonoBehaviour
     private float intervalTimer = 0;
 
     [SerializeField]
+    private Vector2 posMisalignment = new(0,6);
+
+    [SerializeField]
     private GameObject fallingObject = null;
 
     private Vector3 summonPos = Vector3.zero;
@@ -20,7 +23,7 @@ public class FallingGimmick : MonoBehaviour
     void Start()
     {
         summonPos = gameObject.transform.position;
-        summonPos.y += 6;
+        summonPos += (Vector3)posMisalignment;
     }
 
     // Update is called once per frame
