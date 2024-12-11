@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48593af77d7b0c7458f3cf1c09e61ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstTime: 2
+  firstTime: 4
   intervalTime: 5
   posMisalignment: {x: 0, y: 0}
   fallingObject: {fileID: 6594259934445871615, guid: a24b8ecc714f4fe40b794bab8da808f8, type: 3}
@@ -2194,7 +2194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48593af77d7b0c7458f3cf1c09e61ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstTime: 0
+  firstTime: 1
   intervalTime: 5
   posMisalignment: {x: 0, y: 0}
   fallingObject: {fileID: 6594259934445871615, guid: a24b8ecc714f4fe40b794bab8da808f8, type: 3}
@@ -4065,7 +4065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48593af77d7b0c7458f3cf1c09e61ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstTime: 0
+  firstTime: 2
   intervalTime: 5
   posMisalignment: {x: 0, y: 0}
   fallingObject: {fileID: 6594259934445871615, guid: a24b8ecc714f4fe40b794bab8da808f8, type: 3}
@@ -9397,7 +9397,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1386136186}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 506261590}
+        m_TargetAssemblyTypeName: StageRoot, Assembly-CSharp
+        m_MethodName: ButtonStageSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1386136186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13566,7 +13578,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2016213176}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 506261590}
+        m_TargetAssemblyTypeName: StageRoot, Assembly-CSharp
+        m_MethodName: ButtonRetry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2016213176
 MonoBehaviour:
   m_ObjectHideFlags: 0

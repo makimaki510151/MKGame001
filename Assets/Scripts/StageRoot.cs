@@ -214,7 +214,8 @@ public class StageRoot : MonoBehaviour
         StartCoroutine(LoadYourAsyncScene("StageSelect"));
         Time.timeScale = 1;
     }
-    public void ButtonStgae()
+    
+    public void ButtonRetry()
     {
         if (isButtonGo)
         {
@@ -224,6 +225,7 @@ public class StageRoot : MonoBehaviour
         StartCoroutine(LoadYourAsyncScene("Stage"));
         Time.timeScale = 1;
     }
+
     IEnumerator LoadYourAsyncScene(string name)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(name);
