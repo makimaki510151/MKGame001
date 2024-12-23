@@ -17,6 +17,10 @@ public class TitleRoot : MonoBehaviour
     [SerializeField]
     private GameObject soundSettingObject = null;
     [SerializeField]
+    private GameObject windowedSizeSettingObject = null;
+
+
+    [SerializeField]
     private Slider seSlider = null;
     [SerializeField]
     private Slider bgmSlider = null;
@@ -56,6 +60,12 @@ public class TitleRoot : MonoBehaviour
     public void ButtonSoundSetting()
     {
         soundSettingObject.SetActive(true);
+        windowedSizeSettingObject.SetActive(false);
+    }
+    public void ButtonWindowedSizeSetting()
+    {
+        soundSettingObject.SetActive(false);
+        windowedSizeSettingObject.SetActive(true);
     }
 
     public void SliderChangedSe()
@@ -77,5 +87,22 @@ public class TitleRoot : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    public void SetResolution(int width, int height,FullScreenMode screen)
+    {
+        // 第3引数にはフルスクリーンかどうかを指定できます。
+        // 現在のフルスクリーン状態を維持したい場合はScreen.fullScreenを渡します。
+        Screen.SetResolution(width, height, screen);
+    }
+
+    public void FullScreen1920()
+    {
+        SetResolution(1920, 1080,FullScreenMode.FullScreenWindow);
+    }
+
+    public void Windowed1280()
+    {
+        SetResolution(1280, 720, FullScreenMode.Windowed);
     }
 }
