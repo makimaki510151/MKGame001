@@ -33,7 +33,7 @@ public class StageSlectRoot : MonoBehaviour
     [SerializeField]
     private Image thirdIconImage = null;
     [SerializeField]
-    private Image[] thirdStoryImages = new Image[3];
+    private Image[] thirdStoryImages = new Image[7];
 
 
 
@@ -43,7 +43,7 @@ public class StageSlectRoot : MonoBehaviour
     private Vector3 thirdMainPosBefore = new(-350, 0, 0);
     private Vector3 thirdMainPosAfter = new(-350, 950, 0);
     private Vector3 thirdStoryPosBefore = new(-350, -1225, 0);
-    private Vector3 thirdStoryPosAfter = new(-350, -275, 0);
+    private Vector3 thirdStoryPosAfter = new(-350, -32, 0);
 
 
     enum UIMoveUpDown
@@ -155,9 +155,56 @@ public class StageSlectRoot : MonoBehaviour
                 thirdNameImage.sprite = dataScriptableObject.stageContents[i].nameSprite;
                 thirdExplanationImage.sprite = dataScriptableObject.stageContents[i].explanationSprite;
                 thirdIconImage.sprite = dataScriptableObject.stageContents[i].iconSprite;
-                for (int j = 0; j < thirdStoryImages.Length; j++)
+
+                for (int j = 0; j < dataScriptableObject.stageContents[i].stageProgressFlags.Length; j++)
                 {
-                    thirdStoryImages[j].sprite = dataScriptableObject.stageContents[i].storySprites[j];
+                    switch (j)
+                    {
+                        case 0:
+                            if (dataScriptableObject.stageContents[i].stageProgressFlags[j])
+                            {
+                                thirdStoryImages[4].sprite = dataScriptableObject.stageContents[i].storySprites[4];
+                            }
+                            else
+                            {
+                                thirdStoryImages[4].sprite = null;
+                            }
+                            break;
+                        case 1:
+                            if (dataScriptableObject.stageContents[i].stageProgressFlags[j])
+                            {
+                                thirdStoryImages[1].sprite = dataScriptableObject.stageContents[i].storySprites[1];
+                                thirdStoryImages[5].sprite = dataScriptableObject.stageContents[i].storySprites[5];
+                            }
+                            else
+                            {
+                                thirdStoryImages[1].sprite = null;
+                                thirdStoryImages[5].sprite = null;
+                            }
+                            break; 
+                        case 2:
+                            if (dataScriptableObject.stageContents[i].stageProgressFlags[j])
+                            {
+                                thirdStoryImages[2].sprite = dataScriptableObject.stageContents[i].storySprites[2];
+                                thirdStoryImages[6].sprite = dataScriptableObject.stageContents[i].storySprites[6];
+                            }
+                            else
+                            {
+                                thirdStoryImages[2].sprite = null;
+                                thirdStoryImages[6].sprite = null;
+                            }
+                            break;
+                    }
+                    
+                }
+                thirdStoryImages[0].sprite = dataScriptableObject.stageContents[i].storySprites[0];
+                if (dataScriptableObject.stageContents[i].stageClear)
+                {
+                    thirdStoryImages[3].sprite = dataScriptableObject.stageContents[i].storySprites[3];
+                }
+                else
+                {
+                    thirdStoryImages[3].sprite = null;
                 }
             }
         }

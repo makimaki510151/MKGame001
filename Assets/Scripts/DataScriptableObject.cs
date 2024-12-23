@@ -14,6 +14,8 @@ public class StageContents
     public Sprite[] storySprites = new Sprite[3];
     public List<Sprite> gameOverSpritesValue = new();
     public bool isGetScroll = false;
+    public bool[] stageProgressFlags = new bool[3] {false,false,false};
+    public bool stageClear = false;
 }
 [CreateAssetMenu(fileName = "DataScriptableObject", menuName = "DataScriptableObject", order = 0)]
 public class DataScriptableObject : ScriptableObject

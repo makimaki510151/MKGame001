@@ -187,6 +187,18 @@ public class StageRoot : MonoBehaviour
 
         Time.timeScale = 0;
 
+        for (int i = 0; i < dataScriptableObject.stageContents.Count; i++)
+        {
+            if (dataScriptableObject.selectStageValue == dataScriptableObject.stageContents[i].stageValue)
+            {
+                dataScriptableObject.stageContents[i].stageClear = true;
+                for(int j = 0; j < 3; j++)
+                {
+                    dataScriptableObject.stageContents[i].stageProgressFlags[j] = true;
+                }
+            }
+        }
+
         stageGoalUIObject.SetActive(true);
     }
 
@@ -194,16 +206,20 @@ public class StageRoot : MonoBehaviour
     {
         Time.timeScale = 0;
 
-        for (int j = 0; j < dataScriptableObject.stageContents.Count; j++)
+        for (int i = 0; i < dataScriptableObject.stageContents.Count; i++)
         {
-            if (dataScriptableObject.selectStageValue == dataScriptableObject.stageContents[j].stageValue)
+            if (dataScriptableObject.selectStageValue == dataScriptableObject.stageContents[i].stageValue)
             {
-                gameOverImage.sprite = dataScriptableObject.stageContents[j].gameOverSpritesValue[value];
+                gameOverImage.sprite = dataScriptableObject.stageContents[i].gameOverSpritesValue[value];
+                for (int j = 0; j < value+1; j++)
+                {
+                    dataScriptableObject.stageContents[i].stageProgressFlags[j] = true;
+                }
             }
         }
-
         gameOverUIObject.SetActive(true);
     }
+
     public void ButtonStageSelect()
     {
         if (isButtonGo)
