@@ -22,7 +22,7 @@ public class RotationRange : MonoBehaviour
         lifeTimer -= Time.deltaTime;
         lifeRate = lifeTimer / lifeTime;
         mySpriteRenderer.color = new Color(myColor.r, myColor.g, myColor.b, lifeRate);
-        if (lifeRate > 1)
+        if (lifeRate < 0)
         {
             Destroy(gameObject);
         }

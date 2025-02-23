@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
     private bool isHitStop = false;
     private bool isGameOver = false;
     private bool isPause = false;
+    private bool isBound = true;
 
     private int lClickCount = 0;
     private int invertCount = 0;
@@ -207,6 +208,8 @@ public class Player : MonoBehaviour
     {
         if (!isPause)
         {
+            // Bound Cooltime
+            if(!isBound) isBound = true;
             if (isSlowRate)
             {
                 slowTime += Time.deltaTime;
@@ -295,47 +298,51 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        switch (collision.tag)
-        {
-            case "Wall":
-                switch (directionRotation)
-                {
-                    case DirectionRotation.Left:
-                        RightRotation();
-                        break;
-                    case DirectionRotation.Right:
-                        LeftRotation();
-                        break;
-                }
-                invertCount++;
-                break;
-            case "Goal":
-                StageRoot.Instance.StgaeGoal(lClickCount, invertCount, clearTime, slowTime);
-                break;
-            case "Item":
-                StageRoot.Instance.GetItem(collision.gameObject);
-                break;
-            case "Enemy":
-                collision.GetComponent<Enemy>().Damage(1);
-                break;
-            case "EnemyAttack":
-                lastDamage = collision.GetComponent<DamageSource>().damageType;
-                Damage(1);
-                break;
-            case "DamageWall":
-                lastDamage = collision.GetComponent<DamageSource>().damageType;
-                Damage(1);
-                switch (directionRotation)
-                {
-                    case DirectionRotation.Left:
-                        RightRotation();
-                        break;
-                    case DirectionRotation.Right:
-                        LeftRotation();
-                        break;
-                }
-                invertCount++;
-                break;
+        if(isBound){
+            switch (collision.tag)
+            {
+        
+                case "Goal":
+                    StageRoot.Instance.StgaeGoal(lClickCount, invertCount, clearTime, slowTime);
+                    break;
+                case "Item":
+                    StageRoot.Instance.GetItem(collision.gameObject);
+                    break;
+                case "Enemy":
+                    collision.GetComponent<Enemy>().Damage(1);
+                    break;
+                case "EnemyAttack":
+                    lastDamage = collision.GetComponent<DamageSource>().damageType;
+                    Damage(1);
+                    break;
+                case "DamageWall":
+                    lastDamage = collision.GetComponent<DamageSource>().damageType;
+                    Damage(1);
+                    switch (directionRotation)
+                    {
+                        case DirectionRotation.Left:
+                            RightRotation();
+                            break;
+                        case DirectionRotation.Right:
+                            LeftRotation();
+                            break;
+                    }
+                    invertCount++;
+                    break;
+                case "Wall":
+                    switch (directionRotation)
+                    {
+                        case DirectionRotation.Left:
+                            RightRotation();
+                            break;
+                        case DirectionRotation.Right:
+                            LeftRotation();
+                            break;
+                    }
+                    invertCount++;
+                    break;
+            }
+            isBound = false;
         }
     }
     public void ButtonPause()
