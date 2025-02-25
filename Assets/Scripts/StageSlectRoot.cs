@@ -9,10 +9,10 @@ public class StageSlectRoot : MonoBehaviour
 {
     [SerializeField]
     private DataScriptableObject dataScriptableObject = null;
-    [SerializeField]
-    private GameObject firstObject = null;
-    [SerializeField]
-    private GameObject secondObject = null;
+    // [SerializeField]
+    // private GameObject firstObject = null;
+    // [SerializeField]
+    // private GameObject secondObject = null;
     [SerializeField]
     private GameObject thirdObject = null;
 
@@ -37,8 +37,8 @@ public class StageSlectRoot : MonoBehaviour
 
 
 
-    [SerializeField]
-    private List<GameObject> categoryObjects = new();
+    // [SerializeField]
+    // private List<GameObject> categoryObjects = new();
 
     private Vector3 thirdMainPosBefore = new(-350, 0, 0);
     private Vector3 thirdMainPosAfter = new(-350, 950, 0);
@@ -54,7 +54,7 @@ public class StageSlectRoot : MonoBehaviour
     UIMoveUpDown upDown = UIMoveUpDown.Up;
     float lerpFloat = 0;
 
-    int selectCategory = 0;
+    int selectCategory = 1;
     int selectStageValue = 0;
 
     private bool isUIMove = false;
@@ -145,12 +145,14 @@ public class StageSlectRoot : MonoBehaviour
             return;
         }
         selectStageValue = value;
+        thirdMainRectTransform.localPosition = thirdMainPosBefore;
+        thirdStoryRectTransform.localPosition = thirdStoryPosBefore;
         thirdObject.SetActive(true);
         for (int i = 0; i < dataScriptableObject.stageContents.Count; i++)
         {
-            if (dataScriptableObject.stageContents[i].stageValue == new Vector2(selectCategory, selectStageValue))
+            if (dataScriptableObject.stageContents[i].stageValue == new Vector2(1, selectStageValue))
             {
-                Debug.Log("ŒÄ‚Ño‚µ");
+                Debug.Log("?¿½Ä‚Ño?¿½?¿½");
                 thirdStageImage.sprite = dataScriptableObject.stageContents[i].stageSprite;
                 thirdNameImage.sprite = dataScriptableObject.stageContents[i].nameSprite;
                 thirdExplanationImage.sprite = dataScriptableObject.stageContents[i].explanationSprite;
@@ -211,29 +213,35 @@ public class StageSlectRoot : MonoBehaviour
 
     }
 
+    public void BackStageSelect(){
+        if (isButtonGo){
+            return;
+        };
+        thirdObject.SetActive(false);
+    }
 
-    public void ButtonCategorySelectForward(int value)
-    {
-        if (isButtonGo)
-        {
-            return;
-        }
-        selectCategory = value;
-        secondObject.SetActive(true);
-        categoryObjects[selectCategory].SetActive(true);
-        firstObject.SetActive(false);
-    }
-    public void ButtonCategorySelectBack()
-    {
-        if (isButtonGo)
-        {
-            return;
-        }
-        firstObject.SetActive(true);
-        for (int i = 0; i < categoryObjects.Count; i++)
-        {
-            categoryObjects[i].SetActive(false);
-        }
-        secondObject.SetActive(false);
-    }
+    // public void ButtonCategorySelectForward(int value)
+    // {
+    //     if (isButtonGo)
+    //     {
+    //         return;
+    //     }
+    //     selectCategory = value;
+    //     secondObject.SetActive(true);
+    //     categoryObjects[selectCategory].SetActive(true);
+    //     firstObject.SetActive(false);
+    // }
+    // public void ButtonCategorySelectBack()
+    // {
+    //     if (isButtonGo)
+    //     {
+    //         return;
+    //     }
+    //     firstObject.SetActive(true);
+    //     for (int i = 0; i < categoryObjects.Count; i++)
+    //     {
+    //         categoryObjects[i].SetActive(false);
+    //     }
+    //     secondObject.SetActive(false);
+    // }
 }
