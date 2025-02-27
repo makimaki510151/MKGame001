@@ -309,7 +309,22 @@ public class Player : MonoBehaviour
                     StageRoot.Instance.GetItem(collision.gameObject);
                     break;
                 case "Enemy":
-                    collision.GetComponent<Enemy>().Damage(1);
+                    if(collision.GetComponent<ParentsEnemy>().Damage(1)){
+                        isHitStop = true;
+                        Time.timeScale = 0;
+                    }else{
+                        switch (directionRotation)
+                        {
+                            case DirectionRotation.Left:
+                                RightRotation();
+                                break;
+                            case DirectionRotation.Right:
+                                LeftRotation();
+                                break;
+                        }
+                        invertCount++;
+                    }
+                    
                     break;
                 case "EnemyAttack":
                     lastDamage = collision.GetComponent<DamageSource>().damageType;
