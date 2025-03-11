@@ -49,11 +49,13 @@ public class Player : MonoBehaviour
     private float sizeRate = 4;
     [SerializeField, Header("プレイヤーのHP(変更非推奨)")]
     private int maxHp = 3;
+    private int nowHp;
     [SerializeField, Header("プレイヤーと軸との距離を表示するテキスト")]
     private TMP_Text playerRangeText = null;
     [SerializeField, Header("プレイヤーと軸との線")]
     private LineRenderer line = null;
-    private int nowHp;
+    [SerializeField,Header("右クリック時")]
+    private GameObject rClickImageObject = null;
 
     enum DirectionRotation
     {
@@ -156,11 +158,13 @@ public class Player : MonoBehaviour
             {
                 rateNow = slowRateDef;
                 isSlowRate = true;
+                rClickImageObject.SetActive(true);
             }
             else if (context.canceled)
             {
                 rateNow = 1;
                 isSlowRate = false;
+                rClickImageObject.SetActive(false);
             }
         }
     }
