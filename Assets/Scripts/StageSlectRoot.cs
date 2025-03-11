@@ -42,7 +42,7 @@ public class StageSlectRoot : MonoBehaviour
 
     private Vector3 thirdMainPosBefore = new(-350, 0, 0);
     private Vector3 thirdMainPosAfter = new(-350, 950, 0);
-    private Vector3 thirdStoryPosBefore = new(-350, -1225, 0);
+    private Vector3 thirdStoryPosBefore = new(-350, -982, 0);
     private Vector3 thirdStoryPosAfter = new(-350, -32, 0);
 
 
