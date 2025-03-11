@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2208545192067156633}
   - component: {fileID: 7777270134783671122}
   - component: {fileID: 8512809699297051790}
-  - component: {fileID: 5929915968189585696}
+  - component: {fileID: 306683412724916568}
   m_Layer: 11
   m_Name: AxeWall
   m_TagString: Wall
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5929915968189585696
+--- !u!114 &306683412724916568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,8 +140,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3862031508987951116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48593af77d7b0c7458f3cf1c09e61ec3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e476e8cc2c4e6946b683b3d961ec426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstTime: 0
   intervalTime: 5
-  fallingObject: {fileID: 2623381434895735388, guid: 5f37ec82b2f5804408722bb4a83343e3, type: 3}
+  posMisalignment: {x: 0, y: 6}
+  summonObject: {fileID: 0}

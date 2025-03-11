@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3561077698898199367}
   - component: {fileID: 3274948145502516202}
   - component: {fileID: 7290696721400365812}
-  - component: {fileID: 5765035510565712933}
   - component: {fileID: -8870551977042600646}
+  - component: {fileID: -114551074285991302}
   m_Layer: 10
-  m_Name: FallingAxe0
+  m_Name: SummonWolfUp
   m_TagString: DamageWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +138,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: -1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -150,20 +150,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5765035510565712933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2623381434895735388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 846ee49edaf95d543a5d53d66c18d5f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 6
-  rotationValue: 600
 --- !u!114 &-8870551977042600646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,3 +163,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageType: 0
+--- !u!114 &-114551074285991302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2623381434895735388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb4f9c460b944a4a980104341a352b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 5

@@ -178,14 +178,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AxeWall (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 5929915968189585696, guid: 768d3972d222533488939bc9c11002b3, type: 3}
-      propertyPath: intervalTime
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5929915968189585696, guid: 768d3972d222533488939bc9c11002b3, type: 3}
-      propertyPath: fallingObject
-      value: 
-      objectReference: {fileID: 2623381434895735388, guid: 439d570b86d08bc4a9ccf7d56467a0f4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3780,7 +3772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &412994057
 Transform:
   m_ObjectHideFlags: 0
@@ -4118,14 +4110,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AxeWall (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 5929915968189585696, guid: 768d3972d222533488939bc9c11002b3, type: 3}
-      propertyPath: intervalTime
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5929915968189585696, guid: 768d3972d222533488939bc9c11002b3, type: 3}
-      propertyPath: fallingObject
-      value: 
-      objectReference: {fileID: 2623381434895735388, guid: 439d570b86d08bc4a9ccf7d56467a0f4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4655,7 +4639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDebug: 1
-  debugVector2: {x: 1, y: 1}
+  debugVector2: {x: 1, y: 2}
   dataScriptableObject: {fileID: 11400000, guid: 452181623c8f65c4c91eecab4821af62, type: 2}
   playerTransform: {fileID: 59004560}
   playerSpriteRenderer: {fileID: 811004786}
@@ -6045,10 +6029,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AxeWall
       objectReference: {fileID: 0}
-    - target: {fileID: 5929915968189585696, guid: 768d3972d222533488939bc9c11002b3, type: 3}
-      propertyPath: intervalTime
-      value: 3.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6320,14 +6300,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AxeWall (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5929915968189585696, guid: 768d3972d222533488939bc9c11002b3, type: 3}
-      propertyPath: firstTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5929915968189585696, guid: 768d3972d222533488939bc9c11002b3, type: 3}
-      propertyPath: intervalTime
-      value: 3.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6410,6 +6382,76 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
+--- !u!1001 &659146254
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 926398770}
+    m_Modifications:
+    - target: {fileID: 306683412724916568, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: summonObject
+      value: 
+      objectReference: {fileID: 2623381434895735388, guid: c5f2b007b7088cb43a7d670ba18ea0d6, type: 3}
+    - target: {fileID: 306683412724916568, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: posMisalignment.y
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3862031508987951116, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_Name
+      value: AxeWall (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+--- !u!4 &659146255 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+  m_PrefabInstance: {fileID: 659146254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &665367115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6873747588027853031, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
@@ -8305,6 +8347,8 @@ Transform:
   m_Children:
   - {fileID: 199500558}
   - {fileID: 792725680}
+  - {fileID: 1540520635}
+  - {fileID: 659146255}
   - {fileID: 1781131092}
   - {fileID: 821371174}
   m_Father: {fileID: 412994057}
@@ -9975,18 +10019,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AxeWall (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 5929915968189585696, guid: 768d3972d222533488939bc9c11002b3, type: 3}
-      propertyPath: firstTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5929915968189585696, guid: 768d3972d222533488939bc9c11002b3, type: 3}
-      propertyPath: intervalTime
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5929915968189585696, guid: 768d3972d222533488939bc9c11002b3, type: 3}
-      propertyPath: fallingObject
-      value: 
-      objectReference: {fileID: 2623381434895735388, guid: 439d570b86d08bc4a9ccf7d56467a0f4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11620,10 +11652,6 @@ PrefabInstance:
     - target: {fileID: 3862031508987951116, guid: 768d3972d222533488939bc9c11002b3, type: 3}
       propertyPath: m_Name
       value: AxeWall (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5929915968189585696, guid: 768d3972d222533488939bc9c11002b3, type: 3}
-      propertyPath: intervalTime
-      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13340,6 +13368,72 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6873747588027853031, guid: 8b4d56805ebc32a43aa5fb7f0db1162c, type: 3}
   m_PrefabInstance: {fileID: 617578610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1540520634
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 926398770}
+    m_Modifications:
+    - target: {fileID: 306683412724916568, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: summonObject
+      value: 
+      objectReference: {fileID: 2623381434895735388, guid: 5f37ec82b2f5804408722bb4a83343e3, type: 3}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3862031508987951116, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: m_Name
+      value: AxeWall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+--- !u!4 &1540520635 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2208545192067156633, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+  m_PrefabInstance: {fileID: 1540520634}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1540796475
 GameObject:
