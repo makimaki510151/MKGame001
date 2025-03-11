@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gimmick1_wolf1 : MonoBehaviour
+public class Summon_StraightWolf : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

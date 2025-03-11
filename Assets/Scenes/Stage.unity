@@ -1748,7 +1748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7853030091369348852, guid: d833d63777e320240beee8e63139aa53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 291
+      value: 491
       objectReference: {fileID: 0}
     - target: {fileID: 7853030091369348852, guid: d833d63777e320240beee8e63139aa53, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3780,7 +3780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &412994057
 Transform:
   m_ObjectHideFlags: 0
@@ -5429,7 +5429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &576730641
 Transform:
   m_ObjectHideFlags: 0
@@ -6977,7 +6977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3862031508987951116, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_Name
-      value: Wall
+      value: OuterWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7533,11 +7533,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 299
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 141
+      value: 241.5
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7577,7 +7577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3862031508987951116, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_Name
-      value: Wall (2)
+      value: OuterWall (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15452,11 +15452,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 299
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 141
+      value: 241.5
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15496,7 +15496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3862031508987951116, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_Name
-      value: Wall (1)
+      value: OuterWall (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
