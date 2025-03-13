@@ -6,7 +6,6 @@ public class Gimmick1_StraightWolf : MonoBehaviour
 {
     [SerializeField]
     private float lifeTime = 5;
-    private float lifeTimer = 0;
 
     private Rigidbody2D myRigidbody2D = null;
 

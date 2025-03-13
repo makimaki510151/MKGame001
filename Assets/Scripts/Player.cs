@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
     private TMP_Text playerRangeText = null;
     [SerializeField, Header("プレイヤーと軸との線")]
     private LineRenderer line = null;
-    [SerializeField,Header("右クリック時")]
+    [SerializeField, Header("右クリック時")]
     private GameObject rClickImageObject = null;
 
     enum DirectionRotation
@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
 
     public void OnLClick(InputAction.CallbackContext context)
     {
-        if (context.started && Time.timeScale == 1 && !isClickInterval && !isPause)
+        if (context.started && Time.timeScale != 0 && !isClickInterval && !isPause)
         {
             if (TouchAct(Input.mousePosition))
             {
@@ -152,18 +152,20 @@ public class Player : MonoBehaviour
 
     public void OnRClick(InputAction.CallbackContext context)
     {
-        if (Time.timeScale == 1 && !isPause)
+        if (Time.time != 0 && !isPause)
         {
             if (context.started)
             {
-                rateNow = slowRateDef;
+                //rateNow = slowRateDef;
                 isSlowRate = true;
+                Time.timeScale = slowRateDef;
                 rClickImageObject.SetActive(true);
             }
             else if (context.canceled)
             {
-                rateNow = 1;
+                //rateNow = 1;
                 isSlowRate = false;
+                Time.timeScale = 1;
                 rClickImageObject.SetActive(false);
             }
         }
@@ -194,7 +196,7 @@ public class Player : MonoBehaviour
         line.startWidth = 0.1f;
         line.endWidth = 0.1f;
         line.positionCount = 2;
-        
+
         LeftRotation();
         radius = Vector2.Distance(myTransform.position, axisOfRotationTransform.position);
 
@@ -213,7 +215,7 @@ public class Player : MonoBehaviour
         if (!isPause)
         {
             // Bound Cooltime
-            if(!isBound) isBound = true;
+            if (!isBound) isBound = true;
             if (isSlowRate)
             {
                 slowTime += Time.deltaTime;
@@ -266,7 +268,8 @@ public class Player : MonoBehaviour
                 {
                     hitStopTimer = 0;
                     isHitStop = false;
-                    Time.timeScale = 1;
+                    if (isSlowRate) Time.timeScale = slowRateDef;
+                    else Time.timeScale = 1;
                 }
             }
 
@@ -302,10 +305,11 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(isBound){
+        if (isBound)
+        {
             switch (collision.tag)
             {
-        
+
                 case "Goal":
                     StageRoot.Instance.StgaeGoal(lClickCount, invertCount, clearTime, slowTime);
                     break;
@@ -313,10 +317,13 @@ public class Player : MonoBehaviour
                     StageRoot.Instance.GetItem(collision.gameObject);
                     break;
                 case "Enemy":
-                    if(collision.GetComponent<ParentsEnemy>().Damage(1)){
+                    if (collision.GetComponent<ParentsEnemy>().Damage(1))
+                    {
                         isHitStop = true;
                         Time.timeScale = 0;
-                    }else{
+                    }
+                    else
+                    {
                         switch (directionRotation)
                         {
                             case DirectionRotation.Left:
@@ -328,7 +335,7 @@ public class Player : MonoBehaviour
                         }
                         invertCount++;
                     }
-                    
+
                     break;
                 case "EnemyAttack":
                     lastDamage = collision.GetComponent<DamageSource>().damageType;
