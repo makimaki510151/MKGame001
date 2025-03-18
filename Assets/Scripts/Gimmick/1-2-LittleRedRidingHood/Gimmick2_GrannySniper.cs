@@ -20,7 +20,10 @@ public class Gimmick2_GrannySniper : MonoBehaviour
     private float hitTime = 0.2f;
     [SerializeField]
     private float preparationTime = 0.2f;
-    
+    [SerializeField]
+    private float firingTime = 1f;
+
+
 
     private int rotationDirection = 1;
     private float rayRange = 0;
@@ -72,11 +75,19 @@ public class Gimmick2_GrannySniper : MonoBehaviour
             if (timer < 0)
             {
                 Instantiate(bulletObject,rotaTransform.position,rotaTransform.rotation);
+                nowPhase = Phase.Firing;
+                timer= firingTime;
+            }
+        }
+        else if (nowPhase == Phase.Firing)
+        {
+            timer-=Time.deltaTime;
+            if (timer < 0)
+            {
                 nowPhase = Phase.Normal;
                 rangeObject.SetActive(true);
             }
         }
-
 
     }
 
