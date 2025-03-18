@@ -355,6 +355,10 @@ public class Player : MonoBehaviour
                     }
                     invertCount++;
                     break;
+                case "Damage":
+                    lastDamage = collision.GetComponent<DamageSource>().damageType;
+                    Damage(1);
+                    break;
                 case "Wall":
                     switch (directionRotation)
                     {

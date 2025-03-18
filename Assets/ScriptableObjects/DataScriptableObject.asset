@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a597ef30f6bb4c80ac1778a3809a4, type: 3}
   m_Name: DataScriptableObject
   m_EditorClassIdentifier: 
-  selectStageValue: {x: 1, y: 1}
+  selectStageValue: {x: 1, y: 2}
   seVolume: 0.5
   bgmVolume: 0.5
   stageContents:
@@ -45,7 +45,10 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    gameOverSpritesValue: []
+    gameOverSpritesValue:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     isGetScroll: 0
     stageProgressFlags: 000000
     stageClear: 0

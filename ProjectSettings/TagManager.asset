@@ -12,6 +12,7 @@ TagManager:
   - DamageWall
   - ClickBox
   - Item
+  - Damage
   layers:
   - Default
   - TransparentFX
