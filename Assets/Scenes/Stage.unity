@@ -7335,6 +7335,10 @@ PrefabInstance:
       propertyPath: bulletObject
       value: 
       objectReference: {fileID: 7644117293370746893, guid: 2788a084e8b131840886dd8a1c258949, type: 3}
+    - target: {fileID: 7404399368437222148, guid: 6a3a3016d04e0a045aedf9957c79b228, type: 3}
+      propertyPath: hitDirection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

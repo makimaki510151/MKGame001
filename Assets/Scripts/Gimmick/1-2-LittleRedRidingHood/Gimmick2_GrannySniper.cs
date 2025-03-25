@@ -22,7 +22,8 @@ public class Gimmick2_GrannySniper : MonoBehaviour
     private float preparationTime = 0.2f;
     [SerializeField]
     private float firingTime = 1f;
-
+    [SerializeField]
+    private int hitDirection = -1;
 
 
     private int rotationDirection = 1;
@@ -51,7 +52,7 @@ public class Gimmick2_GrannySniper : MonoBehaviour
             if (360 - (rotaValue / 2) > rotaTransform.eulerAngles.z && rotaTransform.eulerAngles.z > 180) rotationDirection *= -1;
             else if (rotaTransform.eulerAngles.z - (rotaValue / 2) > 0 && rotaTransform.eulerAngles.z < 180) rotationDirection *= -1;
 
-            RaycastHit2D hit = Physics2D.Raycast(rotaTransform.position, -rotaTransform.right, rayRange, playerLayerMask);
+            RaycastHit2D hit = Physics2D.Raycast(rotaTransform.position, hitDirection*rotaTransform.right, rayRange, playerLayerMask);
             //Debug.DrawRay(rotaTransform.position, -rotaTransform.right, Color.red, rayRange);
             if (hit)
             {
