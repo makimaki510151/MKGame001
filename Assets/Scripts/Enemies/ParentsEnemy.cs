@@ -16,7 +16,7 @@ public class ParentsEnemy : MonoBehaviour
     [System.NonSerialized]
     public bool isCameraRendered = false;
 
-    public void Start()
+    public virtual void Start()
     {
         nowHp = maxHp;
     }
