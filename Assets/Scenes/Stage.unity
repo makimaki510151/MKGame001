@@ -377,6 +377,10 @@ PrefabInstance:
       value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7404399368437222148, guid: 6a3a3016d04e0a045aedf9957c79b228, type: 3}
+      propertyPath: rotaValue
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7404399368437222148, guid: 6a3a3016d04e0a045aedf9957c79b228, type: 3}
       propertyPath: bulletObject
       value: 
       objectReference: {fileID: 7644117293370746893, guid: 2c487f34cbeb3a648aeec8e50a432451, type: 3}
@@ -1906,6 +1910,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 926398770}
     m_Modifications:
     - target: {fileID: 306683412724916568, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: intervalTime
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 306683412724916568, guid: 768d3972d222533488939bc9c11002b3, type: 3}
       propertyPath: summonObject
       value: 
       objectReference: {fileID: 2623381434895735388, guid: 443bf2442dcc4b541ace7452a058d341, type: 3}
@@ -2878,7 +2886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &285423564
 Transform:
   m_ObjectHideFlags: 0
@@ -6297,7 +6305,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7404399368437222148, guid: 6a3a3016d04e0a045aedf9957c79b228, type: 3}
       propertyPath: rotaSpeed
-      value: 0.5
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7404399368437222148, guid: 6a3a3016d04e0a045aedf9957c79b228, type: 3}
+      propertyPath: rotaValue
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 7404399368437222148, guid: 6a3a3016d04e0a045aedf9957c79b228, type: 3}
       propertyPath: bulletObject
@@ -17194,6 +17206,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 926398770}
     m_Modifications:
     - target: {fileID: 306683412724916568, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: firstTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 306683412724916568, guid: 768d3972d222533488939bc9c11002b3, type: 3}
       propertyPath: summonObject
       value: 
       objectReference: {fileID: 2623381434895735388, guid: 443bf2442dcc4b541ace7452a058d341, type: 3}
@@ -18001,6 +18017,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 926398770}
     m_Modifications:
+    - target: {fileID: 306683412724916568, guid: 768d3972d222533488939bc9c11002b3, type: 3}
+      propertyPath: intervalTime
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 306683412724916568, guid: 768d3972d222533488939bc9c11002b3, type: 3}
       propertyPath: summonObject
       value: 

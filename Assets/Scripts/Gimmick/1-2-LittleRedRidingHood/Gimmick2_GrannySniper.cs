@@ -16,11 +16,11 @@ public class Gimmick2_GrannySniper : MonoBehaviour
     private float rotaValue = 135;
     [SerializeField]
     private LayerMask playerLayerMask;
-    [SerializeField]
+    [SerializeField,Header("Œ©‚Â‚¯‚é")]
     private float hitTime = 0.2f;
-    [SerializeField]
+    [SerializeField, Header("‘_‚¢’è‚ß‚é")]
     private float preparationTime = 0.2f;
-    [SerializeField]
+    [SerializeField, Header("’e‚±‚ß‚é")]
     private float firingTime = 1f;
     [SerializeField]
     private int hitDirection = -1;
