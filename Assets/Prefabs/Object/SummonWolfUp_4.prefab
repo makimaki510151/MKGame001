@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -114551074285991302}
   m_Layer: 10
   m_Name: SummonWolfUp_4
-  m_TagString: Damage
+  m_TagString: DamageWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

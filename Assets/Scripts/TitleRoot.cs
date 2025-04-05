@@ -14,11 +14,6 @@ public class TitleRoot : MonoBehaviour
     [SerializeField]
     private GameObject settingPageObject = null;
     
-    [SerializeField]
-    private GameObject soundSettingObject = null;
-    [SerializeField]
-    private GameObject windowedSizeSettingObject = null;
-
 
     [SerializeField]
     private Slider seSlider = null;
@@ -49,23 +44,17 @@ public class TitleRoot : MonoBehaviour
     {
         mainPageObject.SetActive(false);
         settingPageObject.SetActive(true);
-        ButtonSoundSetting();
+    }
+
+    public void ButtonSettingClose()
+    {
+        mainPageObject.SetActive(true);
+        settingPageObject.SetActive(false);
     }
 
     public void ButtonGameEnd()
     {
 
-    }
-
-    public void ButtonSoundSetting()
-    {
-        soundSettingObject.SetActive(true);
-        windowedSizeSettingObject.SetActive(false);
-    }
-    public void ButtonWindowedSizeSetting()
-    {
-        soundSettingObject.SetActive(false);
-        windowedSizeSettingObject.SetActive(true);
     }
 
     public void SliderChangedSe()

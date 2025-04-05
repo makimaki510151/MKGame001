@@ -104,6 +104,17 @@ public class StageSlectRoot : MonoBehaviour
         dataScriptableObject.selectStageValue = new Vector2(selectCategory, selectStageValue);
         StartCoroutine(LoadYourAsyncScene("Stage"));
     }
+
+    public void ButtonReturn()
+    {
+        if (isButtonGo)
+        {
+            return;
+        }
+        isButtonGo = true;
+        StartCoroutine(LoadYourAsyncScene("Title"));
+    }
+
     IEnumerator LoadYourAsyncScene(string name)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(name);
@@ -219,6 +230,7 @@ public class StageSlectRoot : MonoBehaviour
         };
         thirdObject.SetActive(false);
     }
+
 
     // public void ButtonCategorySelectForward(int value)
     // {
