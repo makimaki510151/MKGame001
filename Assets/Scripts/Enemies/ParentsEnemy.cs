@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
 
 public class ParentsEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     public int maxHp = 1;
+    
+    public bool isGimmick0Wall = false;
+    public int gimmick0WallValue = 0;
+    public Gimmick0Wall gimmick0Wall = null;
+
     [System.NonSerialized]
     public int nowHp;
 
@@ -26,11 +32,16 @@ public class ParentsEnemy : MonoBehaviour
         nowHp -= damageValue;
         if (nowHp <= 0)
         {
+            if (isGimmick0Wall)
+            {
+                gimmick0Wall.TrialClear(gimmick0WallValue);
+            }
             Destroy(gameObject);
             return true;
         }
         return false;
     }
+
     public void OnWillRenderObject()
     {
         if (Camera.current.tag == mainCameraTagName)
