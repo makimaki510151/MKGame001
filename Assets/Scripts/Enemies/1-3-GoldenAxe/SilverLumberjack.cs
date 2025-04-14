@@ -1,6 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TestTools;
 
-public class IronLumberjack : ParentsEnemy
+public class SilverLumberjack : ParentsEnemy
 {
     [SerializeField]
     private float detectionSize = 5.0f;
@@ -9,11 +12,11 @@ public class IronLumberjack : ParentsEnemy
     [SerializeField]
     private float rushSpeed = 100.0f;
     [SerializeField]
-    private float distanceMagnification = 1.2f;
-    [SerializeField]
     private float reRushTime = 2.0f;
     [SerializeField]
     private GameObject searchRangeObject = null;
+    [SerializeField]
+    private Transform axeTransform = null;
 
     private float timer = 0;
     private Rigidbody2D myRigidbody2D;
@@ -40,29 +43,28 @@ public class IronLumberjack : ParentsEnemy
 
     void Update()
     {
-        deltaTime = Time.deltaTime;
-        if (detectionSize >= GetPlayerDistance() && !isHit &&!isRush&& !isRrRush)
+        if (detectionSize >= GetPlayerDistance() && !isHit && !isRush && !isRrRush)
         {
             timer = rushWaitingTime;
             isHit = true;
             hitPos = playerTransform.position;
             searchRangeObject.SetActive(false);
 
-            Vector3 forwardDirection = transform.right;
+            Vector3 forwardDirection = -transform.right;
             Vector3 dir = (hitPos - transform.position).normalized;
 
             angle = Vector3.SignedAngle(forwardDirection, dir, Vector3.forward);
+
         }
         else if (isHit && !isRush)
         {
             timer -= deltaTime;
             rotateValue = angle / rushWaitingTime * deltaTime;
             transform.Rotate(new Vector3(0f, 0f, rotateValue));
-            
             if (timer <= 0)
             {
                 startPos = myRigidbody2D.position;
-                moveEndPos = hitPos + (hitPos - (Vector3)myRigidbody2D.position) * (distanceMagnification - 1);
+                moveEndPos = hitPos;
                 moveRange = Vector2.Distance(moveEndPos, startPos);
                 isRush = true;
                 isHit = false;
@@ -70,7 +72,7 @@ public class IronLumberjack : ParentsEnemy
         }
         else if (isRush)
         {
-            myRigidbody2D.velocity = (rushSpeed * deltaTime * (moveEndPos - startPos).normalized);
+            myRigidbody2D.velocity = (rushSpeed * Time.deltaTime * (moveEndPos - startPos).normalized);
             if (Vector2.Distance(startPos, myRigidbody2D.position) >= moveRange)
             {
                 RushStop();
@@ -79,14 +81,16 @@ public class IronLumberjack : ParentsEnemy
         else if (isRrRush)
         {
             timer -= Time.deltaTime;
-            rotateValue = 180 / reRushTime * deltaTime;
 
-            transform.Rotate(new Vector3(0f, 0f, rotateValue));
+            float rotateValue = 125 / reRushTime * Time.deltaTime;
+
+            axeTransform.Rotate(new Vector3(0f, 0f, rotateValue));
 
             if (timer <= 0)
             {
                 isRrRush = false;
                 searchRangeObject.SetActive(true);
+                axeTransform.rotation = Quaternion.identity;
             }
         }
     }
@@ -95,7 +99,6 @@ public class IronLumberjack : ParentsEnemy
     {
         return Vector2.Distance(playerTransform.position, myRigidbody2D.position);
     }
-
 
     private void RushStop()
     {
