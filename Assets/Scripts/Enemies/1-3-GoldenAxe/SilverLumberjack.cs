@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TestTools;
 
 public class SilverLumberjack : ParentsEnemy
 {
@@ -11,6 +8,8 @@ public class SilverLumberjack : ParentsEnemy
     private float rushWaitingTime = 1.5f;
     [SerializeField]
     private float rushSpeed = 100.0f;
+    [SerializeField]
+    private float swingTime = 0.5f;
     [SerializeField]
     private float reRushTime = 2.0f;
     [SerializeField]
@@ -23,6 +22,7 @@ public class SilverLumberjack : ParentsEnemy
     private Transform playerTransform;
     private bool isHit = false;
     private bool isRush = false;
+    private bool isSwing = false;
     private bool isRrRush = false;
     private Vector3 hitPos = Vector3.zero;
     private Vector3 moveEndPos = Vector3.zero;
@@ -43,7 +43,8 @@ public class SilverLumberjack : ParentsEnemy
 
     void Update()
     {
-        if (detectionSize >= GetPlayerDistance() && !isHit && !isRush && !isRrRush)
+        deltaTime = Time.deltaTime;
+        if (detectionSize >= GetPlayerDistance() && !isHit && !isRush && !isSwing && !isRrRush)
         {
             timer = rushWaitingTime;
             isHit = true;
@@ -54,13 +55,13 @@ public class SilverLumberjack : ParentsEnemy
             Vector3 dir = (hitPos - transform.position).normalized;
 
             angle = Vector3.SignedAngle(forwardDirection, dir, Vector3.forward);
-
         }
         else if (isHit && !isRush)
         {
             timer -= deltaTime;
             rotateValue = angle / rushWaitingTime * deltaTime;
             transform.Rotate(new Vector3(0f, 0f, rotateValue));
+
             if (timer <= 0)
             {
                 startPos = myRigidbody2D.position;
@@ -72,17 +73,29 @@ public class SilverLumberjack : ParentsEnemy
         }
         else if (isRush)
         {
-            myRigidbody2D.velocity = (rushSpeed * Time.deltaTime * (moveEndPos - startPos).normalized);
+            myRigidbody2D.velocity = (rushSpeed * deltaTime * (moveEndPos - startPos).normalized);
             if (Vector2.Distance(startPos, myRigidbody2D.position) >= moveRange)
             {
                 RushStop();
             }
         }
+        else if (isSwing)
+        {
+            timer -= deltaTime;
+            rotateValue = 125 / swingTime * deltaTime;
+
+            axeTransform.Rotate(new Vector3(0f, 0f, rotateValue));
+            if(timer <= 0)
+            {
+                isSwing = false;
+                isRrRush = true;
+                timer = reRushTime;
+            }
+        }
         else if (isRrRush)
         {
-            timer -= Time.deltaTime;
-
-            float rotateValue = 125 / reRushTime * Time.deltaTime;
+            timer -= deltaTime;
+            rotateValue = -125 / reRushTime * deltaTime;
 
             axeTransform.Rotate(new Vector3(0f, 0f, rotateValue));
 
@@ -90,7 +103,6 @@ public class SilverLumberjack : ParentsEnemy
             {
                 isRrRush = false;
                 searchRangeObject.SetActive(true);
-                axeTransform.rotation = Quaternion.identity;
             }
         }
     }
@@ -100,12 +112,13 @@ public class SilverLumberjack : ParentsEnemy
         return Vector2.Distance(playerTransform.position, myRigidbody2D.position);
     }
 
+
     private void RushStop()
     {
         myRigidbody2D.velocity = Vector2.zero;
         isRush = false;
-        timer = reRushTime;
-        isRrRush = true;
+        timer = swingTime;
+        isSwing = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

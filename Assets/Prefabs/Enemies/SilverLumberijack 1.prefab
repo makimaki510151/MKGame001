@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 6258021868026604226}
   - component: {fileID: 5560479631020176728}
   - component: {fileID: 1343477550410750234}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Damage
   m_TagString: DamageWall
   m_Icon: {fileID: 0}
@@ -144,8 +144,8 @@ Transform:
   m_GameObject: {fileID: 1762938418990531003}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 0.1, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6510586426680718892}
@@ -428,9 +428,9 @@ MonoBehaviour:
   gimmick0WallValue: 0
   gimmick0Wall: {fileID: 0}
   detectionSize: 4
-  rushWaitingTime: 1.5
-  rushSpeed: 100
+  rushWaitingTime: 0.5
+  rushSpeed: 400
+  swingTime: 0.5
   reRushTime: 2
   searchRangeObject: {fileID: 467066073139680717}
-  rotateSpeed: 10
   axeTransform: {fileID: 6510586426680718892}
