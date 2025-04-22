@@ -4,7 +4,7 @@ public class SilverLumberjack : ParentsEnemy
 {
     [SerializeField]
     private float detectionSize = 5.0f;
-    [SerializeField]
+    //[SerializeField]
     private float rushWaitingTime = 1.5f;
     [SerializeField]
     private float rushSpeed = 100.0f;
@@ -25,7 +25,7 @@ public class SilverLumberjack : ParentsEnemy
     private bool isHit = false;
     private bool isRush = false;
     private bool isSwing = false;
-    private bool isRrRush = false;
+    private bool isRrRush = false; 
     private bool isIntervalTime = false;
     private Vector3 hitPos = Vector3.zero;
     private Vector3 moveEndPos = Vector3.zero;
@@ -47,9 +47,8 @@ public class SilverLumberjack : ParentsEnemy
     void Update()
     {
         deltaTime = Time.deltaTime;
-        if (detectionSize >= GetPlayerDistance() && !isHit && !isRush && !isSwing && !isRrRush && !isIntervalTime)
+        if (detectionSize >= GetPlayerDistance() && !isHit && !isRush && !isSwing && !isRrRush&&!isIntervalTime)
         {
-            timer = rushWaitingTime;
             isHit = true;
             hitPos = playerTransform.position;
             searchRangeObject.SetActive(false);
@@ -58,6 +57,8 @@ public class SilverLumberjack : ParentsEnemy
             Vector3 dir = (hitPos - transform.position).normalized;
 
             angle = Vector3.SignedAngle(forwardDirection, dir, Vector3.forward);
+            timer = swingTime * angle / 125;
+            rushWaitingTime = swingTime * angle / 125;
         }
         else if (isHit && !isRush)
         {
@@ -88,7 +89,7 @@ public class SilverLumberjack : ParentsEnemy
             rotateValue = 125 / swingTime * deltaTime;
 
             axeTransform.Rotate(new Vector3(0f, 0f, rotateValue));
-            if (timer <= 0)
+            if(timer <= 0)
             {
                 isSwing = false;
                 isRrRush = true;
