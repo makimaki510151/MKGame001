@@ -13,6 +13,8 @@ public class IronLumberjack : ParentsEnemy
     [SerializeField]
     private float reRushTime = 2.0f;
     [SerializeField]
+    private float intervalTime = 1;
+    [SerializeField]
     private GameObject searchRangeObject = null;
 
     private float timer = 0;
@@ -21,6 +23,7 @@ public class IronLumberjack : ParentsEnemy
     private bool isHit = false;
     private bool isRush = false;
     private bool isRrRush = false;
+    private bool isIntervalTime = false;
     private Vector3 hitPos = Vector3.zero;
     private Vector3 moveEndPos = Vector3.zero;
     private Vector3 startPos = Vector3.zero;
@@ -41,7 +44,7 @@ public class IronLumberjack : ParentsEnemy
     void Update()
     {
         deltaTime = Time.deltaTime;
-        if (detectionSize >= GetPlayerDistance() && !isHit &&!isRush&& !isRrRush)
+        if (detectionSize >= GetPlayerDistance() && !isHit && !isRush && !isRrRush && !isIntervalTime)
         {
             timer = rushWaitingTime;
             isHit = true;
@@ -58,7 +61,7 @@ public class IronLumberjack : ParentsEnemy
             timer -= deltaTime;
             rotateValue = angle / rushWaitingTime * deltaTime;
             transform.Rotate(new Vector3(0f, 0f, rotateValue));
-            
+
             if (timer <= 0)
             {
                 startPos = myRigidbody2D.position;
@@ -78,7 +81,7 @@ public class IronLumberjack : ParentsEnemy
         }
         else if (isRrRush)
         {
-            timer -= Time.deltaTime;
+            timer -= deltaTime;
             rotateValue = 180 / reRushTime * deltaTime;
 
             transform.Rotate(new Vector3(0f, 0f, rotateValue));
@@ -86,6 +89,16 @@ public class IronLumberjack : ParentsEnemy
             if (timer <= 0)
             {
                 isRrRush = false;
+                isIntervalTime = true;
+                timer = intervalTime;
+            }
+        }
+        else if (isIntervalTime)
+        {
+            timer -= deltaTime;
+            if (timer <= 0)
+            {
+                isIntervalTime = false;
                 searchRangeObject.SetActive(true);
             }
         }
