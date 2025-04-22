@@ -8506,6 +8506,10 @@ PrefabInstance:
       propertyPath: gimmick0Wall
       value: 
       objectReference: {fileID: 91623665}
+    - target: {fileID: 2670214966664482413, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
+      propertyPath: isGimmick0Wall
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6937566516727012811, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 132
@@ -9685,6 +9689,10 @@ PrefabInstance:
       propertyPath: gimmick0Wall
       value: 
       objectReference: {fileID: 91623665}
+    - target: {fileID: 2670214966664482413, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
+      propertyPath: isGimmick0Wall
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6937566516727012811, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 152
@@ -11704,6 +11712,10 @@ PrefabInstance:
       propertyPath: gimmick0Wall
       value: 
       objectReference: {fileID: 91623665}
+    - target: {fileID: 2670214966664482413, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
+      propertyPath: isGimmick0Wall
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6937566516727012811, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 512
@@ -13948,6 +13960,10 @@ PrefabInstance:
       propertyPath: gimmick0Wall
       value: 
       objectReference: {fileID: 91623665}
+    - target: {fileID: 2670214966664482413, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
+      propertyPath: isGimmick0Wall
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6937566516727012811, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 189
@@ -16873,6 +16889,10 @@ PrefabInstance:
       propertyPath: gimmick0Wall
       value: 
       objectReference: {fileID: 91623665}
+    - target: {fileID: 2670214966664482413, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
+      propertyPath: isGimmick0Wall
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6937566516727012811, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 172
@@ -18095,6 +18115,10 @@ PrefabInstance:
       propertyPath: gimmick0Wall
       value: 
       objectReference: {fileID: 91623665}
+    - target: {fileID: 2670214966664482413, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
+      propertyPath: isGimmick0Wall
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6937566516727012811, guid: b3218d5aa21e1744a921192641f8167d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 527
