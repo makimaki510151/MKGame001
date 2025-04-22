@@ -144,8 +144,8 @@ Transform:
   m_GameObject: {fileID: 1762938418990531003}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 0.1, y: 5, z: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 0.1, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6510586426680718892}
@@ -427,10 +427,10 @@ MonoBehaviour:
   isGimmick0Wall: 0
   gimmick0WallValue: 0
   gimmick0Wall: {fileID: 0}
-  detectionSize: 4
-  rushWaitingTime: 0.5
+  detectionSize: 6
   rushSpeed: 400
   swingTime: 0.5
   reRushTime: 2
+  intervalTime: 1
   searchRangeObject: {fileID: 467066073139680717}
   axeTransform: {fileID: 6510586426680718892}
