@@ -48,7 +48,7 @@ public class IronLumberjack : ParentsEnemy
             hitPos = playerTransform.position;
             searchRangeObject.SetActive(false);
 
-            Vector3 forwardDirection = transform.right;
+            Vector3 forwardDirection = -transform.right;
             Vector3 dir = (hitPos - transform.position).normalized;
 
             angle = Vector3.SignedAngle(forwardDirection, dir, Vector3.forward);

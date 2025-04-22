@@ -2323,7 +2323,6 @@ Transform:
   - {fileID: 930600471}
   - {fileID: 576730641}
   - {fileID: 412994057}
-  - {fileID: 667500186}
   - {fileID: 285423564}
   - {fileID: 1916668499}
   - {fileID: 607538312}
@@ -2782,9 +2781,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 702595822}
-  - {fileID: 498886290}
   - {fileID: 1922315598}
+  - {fileID: 498886290}
+  - {fileID: 702595822}
   - {fileID: 1199304777}
   m_Father: {fileID: 285423564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3047,7 +3046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 276.5
+      value: 278
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3091,15 +3090,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7777270134783671122, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_Size.x
-      value: 570
+      value: 573
       objectReference: {fileID: 0}
     - target: {fileID: 8512809699297051790, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_Size.x
-      value: 570
+      value: 573
       objectReference: {fileID: 0}
     - target: {fileID: 8512809699297051790, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 570
+      value: 573
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3263,7 +3262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &285423564
 Transform:
   m_ObjectHideFlags: 0
@@ -3956,7 +3955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &412994057
 Transform:
   m_ObjectHideFlags: 0
@@ -3973,6 +3972,7 @@ Transform:
   - {fileID: 926398770}
   - {fileID: 1854822518}
   - {fileID: 302110558}
+  - {fileID: 667500186}
   m_Father: {fileID: 194769184}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &424830342
@@ -4590,7 +4590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDebug: 1
-  debugVector2: {x: 1, y: 1}
+  debugVector2: {x: 1, y: 3}
   dataScriptableObject: {fileID: 11400000, guid: 452181623c8f65c4c91eecab4821af62, type: 2}
   playerTransform: {fileID: 59004560}
   playerSpriteRenderer: {fileID: 811004786}
@@ -5493,7 +5493,7 @@ GameObject:
   - component: {fileID: 607538312}
   - component: {fileID: 607538313}
   m_Layer: 0
-  m_Name: Background
+  m_Name: BigBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6180,7 +6180,7 @@ Transform:
   m_LocalScale: {x: 502, y: 18, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 194769184}
+  m_Father: {fileID: 412994057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &667500187
 SpriteRenderer:
@@ -7435,7 +7435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 241.5
+      value: 243
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7479,15 +7479,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7777270134783671122, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_Size.x
-      value: 500
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8512809699297051790, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_Size.x
-      value: 500
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8512809699297051790, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 500
+      value: 503
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8497,7 +8497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &930600471
 Transform:
   m_ObjectHideFlags: 0
@@ -12143,8 +12143,8 @@ Transform:
   m_GameObject: {fileID: 1337692004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 276.5, y: 0, z: 0}
-  m_LocalScale: {x: 570, y: 18, z: 1}
+  m_LocalPosition: {x: 278, y: 0, z: 0}
+  m_LocalScale: {x: 573, y: 18, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 285423564}
@@ -13412,7 +13412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1503169183
 Transform:
   m_ObjectHideFlags: 0
@@ -14530,7 +14530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 276.5
+      value: 278
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14574,15 +14574,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7777270134783671122, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_Size.x
-      value: 570
+      value: 573
       objectReference: {fileID: 0}
     - target: {fileID: 8512809699297051790, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_Size.x
-      value: 570
+      value: 573
       objectReference: {fileID: 0}
     - target: {fileID: 8512809699297051790, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 570
+      value: 573
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16245,7 +16245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 241.5
+      value: 243
       objectReference: {fileID: 0}
     - target: {fileID: 2208545192067156633, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16289,15 +16289,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7777270134783671122, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_Size.x
-      value: 500
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8512809699297051790, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_Size.x
-      value: 500
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8512809699297051790, guid: 729ed6490f2430948a691c8378376bd2, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 500
+      value: 503
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
