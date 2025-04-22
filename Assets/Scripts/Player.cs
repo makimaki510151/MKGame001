@@ -161,7 +161,7 @@ public class Player : MonoBehaviour
                 Time.timeScale = slowRateDef;
                 rClickImageObject.SetActive(true);
             }
-            else if (context.canceled)
+            else if (context.canceled&&!isGameOver)
             {
                 //rateNow = 1;
                 isSlowRate = false;
