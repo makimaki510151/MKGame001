@@ -37,7 +37,7 @@ public class IronLumberjack : ParentsEnemy
         base.Start();
         playerTransform = StageRoot.Instance.GetPlayer();
         myRigidbody2D = GetComponent<Rigidbody2D>();
-        searchRangeObject.transform.localScale = new Vector3(detectionSize * 2, detectionSize * 2, 1);
+        searchRangeObject.transform.localScale = new Vector3(detectionSize * 2/transform.localScale.x, detectionSize * 2 / transform.localScale.y, 1);
 
     }
 

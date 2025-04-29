@@ -21,6 +21,8 @@ public class GoldLumberjack : ParentsEnemy
     [SerializeField]
     private float force = 10f;
     [SerializeField]
+    private float firstTime = 0f;
+    [SerializeField]
     private float throwingCT = 1f;
     [SerializeField]
     private Vector2 randomRnage = new (0.2f, 1.0f);
@@ -48,6 +50,12 @@ public class GoldLumberjack : ParentsEnemy
     // Update is called once per frame
     void Update()
     {
+        if (firstTime > 0)
+        {
+            firstTime -= Time.deltaTime;
+            return;
+        }
+
         MoveUpdate(Time.deltaTime);
         timer -= Time.deltaTime;
         if(timer < 0)
