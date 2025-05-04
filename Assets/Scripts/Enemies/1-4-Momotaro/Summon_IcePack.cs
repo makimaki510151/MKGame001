@@ -20,7 +20,6 @@ public class Summon_IcePack : ParentsEnemy
     private Rigidbody2D myRigidbody2D;
     private Transform playerTransform;
 
-
     public override void Start()
     {
         base.Start();
@@ -38,9 +37,16 @@ public class Summon_IcePack : ParentsEnemy
         }
 
         timer -= Time.deltaTime;
-        if (timer < 0&&playerTransform.position.x <= myRigidbody2D.position.x)
+        if (timer < 0 && playerTransform.position.x <= myRigidbody2D.position.x)
         {
-            Instantiate(icePackObject, transform);
+            // Calculate direction towards the player
+            Vector3 direction = playerTransform.position - transform.position;
+            direction.Normalize();
+
+            // Instantiate ice pack object facing the player
+            GameObject icePack = Instantiate(icePackObject, transform.position, Quaternion.identity);
+            icePack.transform.right = direction; // Assuming icePackObject's initial facing direction is along its right
+
             timer = throwingCT;
         }
     }
