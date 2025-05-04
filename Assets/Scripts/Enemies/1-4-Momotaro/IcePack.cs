@@ -12,6 +12,8 @@ public class IcePack : ParentsEnemy
     private float moveTime = 3;
     [SerializeField]
     private float damageTime = 2;
+    [SerializeField]
+    private Vector3 size = new(3,3,3);
 
     private float timer = 0;
     
@@ -39,6 +41,8 @@ public class IcePack : ParentsEnemy
             timer -= Time.deltaTime;
             if(timer<0)
             {
+                myRigidbody2D.velocity = Vector3.zero;
+                transform.localScale = size;
                 GameObject tempObject = Instantiate(damageObject, transform);
                 tempObject.transform.parent = transform;
                 isMove = false;
