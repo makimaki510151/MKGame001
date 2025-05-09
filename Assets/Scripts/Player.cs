@@ -30,7 +30,9 @@ public class Player : MonoBehaviour
     private float axisOfRotationMoveTimer = 0;
     [SerializeField, Header("プレイヤーと軸との最大距離(-4)")]
     private int playerRangeMax = 10;
-
+    [SerializeField, Header("ダメージクールタイム")]
+    private float damageCTime = 1;
+    private float damageCTTimer = 0;
     [SerializeField, Header("クリックできる範囲を表示するObjectのTransform")]
     private Transform clickRanegImageTransform = null;
     [SerializeField, Header("回転する軸ObjectのTransfrom")]
@@ -214,6 +216,10 @@ public class Player : MonoBehaviour
     {
         if (!isPause)
         {
+            if (damageCTTimer > 0)
+            {
+                damageCTTimer -= Time.deltaTime;
+            }
             // Bound Cooltime
             if (!isBound) isBound = true;
             if (isSlowRate)
@@ -292,6 +298,7 @@ public class Player : MonoBehaviour
 
     private void Damage(int value)
     {
+        damageCTTimer = damageCTime;
         nowHp -= value;
         hpUIObject[nowHp].SetActive(false);
         isHitStop = true;
@@ -342,6 +349,10 @@ public class Player : MonoBehaviour
                     Damage(1);
                     break;
                 case "DamageWall":
+                    if(damageCTTimer > 0)
+                    {
+                        break;
+                    }
                     lastDamage = collision.GetComponent<DamageSource>().damageType;
                     Damage(1);
                     switch (directionRotation)
@@ -356,6 +367,10 @@ public class Player : MonoBehaviour
                     invertCount++;
                     break;
                 case "Damage":
+                    if (damageCTTimer > 0)
+                    {
+                        break;
+                    }
                     lastDamage = collision.GetComponent<DamageSource>().damageType;
                     Damage(1);
                     break;
