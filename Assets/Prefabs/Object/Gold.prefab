@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageObject: {fileID: 0}
   speed: 10
-  moveTime: 6
+  moveTime: 3
   damageTime: 2
 --- !u!50 &7068792641740409660
 Rigidbody2D:
