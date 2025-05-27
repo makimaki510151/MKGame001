@@ -224,7 +224,7 @@ public class Player : MonoBehaviour
             if (!isBound) isBound = true;
             if (isSlowRate)
             {
-                slowTime += Time.deltaTime;
+                slowTime += Time.unscaledDeltaTime;
             }
             clearTime += Time.deltaTime;
 
