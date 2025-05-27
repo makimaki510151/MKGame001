@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7690232799758104079}
   - component: {fileID: 4998301653310875140}
   - component: {fileID: 5116708411919242903}
+  - component: {fileID: -7534907724423294859}
   m_Layer: 10
   m_Name: FlowingPeach
   m_TagString: DamageWall
@@ -172,3 +173,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-7534907724423294859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5960297297480496771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c460ab1239b7c164087efd337725acfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageType: 0
