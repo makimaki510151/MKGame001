@@ -3996,7 +3996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 1
-  isGimmick0Wall: 0
+  isGimmick0Wall: 1
   gimmick0WallValue: 1
   gimmick0Wall: {fileID: 66162301}
   goldObject: {fileID: 7460956991213324765, guid: 8bee7cfbad104af46bcb8c3a2efc52a7, type: 3}
@@ -15818,7 +15818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 1
-  isGimmick0Wall: 0
+  isGimmick0Wall: 1
   gimmick0WallValue: 3
   gimmick0Wall: {fileID: 1296328928}
   goldObject: {fileID: 7460956991213324765, guid: 65f74f98a518dd141a218642d3635731, type: 3}
@@ -17099,7 +17099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 1
-  isGimmick0Wall: 0
+  isGimmick0Wall: 1
   gimmick0WallValue: 2
   gimmick0Wall: {fileID: 1614941865}
   moveTypes:
