@@ -70,10 +70,13 @@ public class StageRoot : MonoBehaviour
     [SerializeField]
     private Player playerSpript = null;
 
+    [SerializeField]
+    private float stage4 = 0.0f;
 
     private Transform cameraTransform = null;
     private bool isButtonGo = false;
     private bool isPauseClose = false;
+    private bool isGorillaMusou = false;
 
     public static StageRoot Instance { get; private set; }
     private void Awake()
@@ -290,5 +293,10 @@ public class StageRoot : MonoBehaviour
     {
         pauseUIObject.SetActive(false);
         isPauseClose = true;
+    }
+
+    public void GorillaMusouStart()
+    {
+        isGorillaMusou = true;
     }
 }

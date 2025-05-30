@@ -80,6 +80,8 @@ public class Player : MonoBehaviour
     private bool isGameOver = false;
     private bool isPause = false;
     private bool isBound = true;
+    private bool isStage4Gimmick = false;
+
 
     private int lClickCount = 0;
     private int invertCount = 0;
@@ -385,6 +387,10 @@ public class Player : MonoBehaviour
                             break;
                     }
                     invertCount++;
+                    break;
+                case "Stage4Gimmick":
+                    isStage4Gimmick = true;
+                    
                     break;
             }
             isBound = false;
