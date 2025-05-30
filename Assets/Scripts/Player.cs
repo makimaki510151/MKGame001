@@ -94,6 +94,10 @@ public class Player : MonoBehaviour
 
     public void OnLClick(InputAction.CallbackContext context)
     {
+        if (isStage4Gimmick)
+        {
+            return;
+        }
         if (context.started && Time.timeScale != 0 && !isClickInterval && !isPause)
         {
             if (TouchAct(Input.mousePosition))
@@ -156,6 +160,10 @@ public class Player : MonoBehaviour
 
     public void OnRClick(InputAction.CallbackContext context)
     {
+        if (isStage4Gimmick)
+        {
+            return;
+        }
         if (Time.time != 0 && !isPause)
         {
             if (context.started)
@@ -176,6 +184,10 @@ public class Player : MonoBehaviour
     }
     public void OnPause(InputAction.CallbackContext context)
     {
+        if (isStage4Gimmick)
+        {
+            return;
+        }
         if (context.started)
         {
             if (isPause)
@@ -216,6 +228,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isStage4Gimmick)
+        {
+            return;
+        }
         if (!isPause)
         {
             if (damageCTTimer > 0)
@@ -390,7 +406,7 @@ public class Player : MonoBehaviour
                     break;
                 case "Stage4Gimmick":
                     isStage4Gimmick = true;
-                    
+                    StageRoot.Instance.GorillaMusouStart();
                     break;
             }
             isBound = false;

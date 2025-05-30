@@ -13,6 +13,7 @@ TagManager:
   - ClickBox
   - Item
   - Damage
+  - Stage4Gimmick
   layers:
   - Default
   - TransparentFX

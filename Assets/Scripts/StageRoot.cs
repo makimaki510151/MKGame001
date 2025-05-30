@@ -71,12 +71,32 @@ public class StageRoot : MonoBehaviour
     private Player playerSpript = null;
 
     [SerializeField]
-    private float stage4 = 0.0f;
+    private float stage4CameraAllTime = 15.0f;
+    private float timer = 0;
+    [SerializeField]
+    private float stage4CamerafirstTime = 5;
+    [SerializeField]
+    private Transform stage4CameraPosEnd = null;
+    [SerializeField]
+    private GameObject shadowAndGorillaObject = null;
+    [SerializeField]
+    private Transform gorillaFallingPos = null;
+    [SerializeField]
+    private float shakeTime = 0.6f;
+    private float shakeTimer = 0;
 
+
+    private ShadowAndGorilla shadowAndGorilla = null;
+
+    private Vector3 posBeforeShaking = Vector3.zero;
     private Transform cameraTransform = null;
+    
     private bool isButtonGo = false;
     private bool isPauseClose = false;
+
     private bool isGorillaMusou = false;
+    private bool isFallingGorilla = false;
+    private bool isCameraShake = false;
 
     public static StageRoot Instance { get; private set; }
     private void Awake()
@@ -139,20 +159,42 @@ public class StageRoot : MonoBehaviour
 
         if (Time.timeScale == 1)
         {
-            if (isCameraPlayer)
+            if (isGorillaMusou)
             {
-                var playerPos = playerTransform.position;
-                playerPos.x += xPosGap;
-                playerPos.y = cameraYPos;
-                playerPos.z = -10;
-                cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, playerPos, 0.01f);
+                timer -= Time.deltaTime;
+                cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, stage4CameraPosEnd.position, 0.01f);
+                if (timer < stage4CameraAllTime - stage4CamerafirstTime && !isFallingGorilla)
+                {
+                    isFallingGorilla = true;
+                    shadowAndGorilla = Instantiate(shadowAndGorillaObject, gorillaFallingPos).GetComponent<ShadowAndGorilla>();
+                }
+                if (isCameraShake)
+                {
+                    shakeTimer -= Time.deltaTime;
+                    if(shakeTimer < 0)
+                    {
+                        shadowAndGorilla.isFalling = false;
+                    }
+
+                }
             }
             else
             {
-                var tempPos = coreTransform.position;
-                tempPos.y = cameraYPos;
-                tempPos.z = -10;
-                cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, tempPos, 0.01f);
+                if (isCameraPlayer)
+                {
+                    var playerPos = playerTransform.position;
+                    playerPos.x += xPosGap;
+                    playerPos.y = cameraYPos;
+                    playerPos.z = -10;
+                    cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, playerPos, 0.01f);
+                }
+                else
+                {
+                    var tempPos = coreTransform.position;
+                    tempPos.y = cameraYPos;
+                    tempPos.z = -10;
+                    cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, tempPos, 0.01f);
+                }
             }
         }
         else
@@ -195,7 +237,7 @@ public class StageRoot : MonoBehaviour
             if (dataScriptableObject.selectStageValue == dataScriptableObject.stageContents[i].stageValue)
             {
                 dataScriptableObject.stageContents[i].stageClear = true;
-                for(int j = 0; j < 3; j++)
+                for (int j = 0; j < 3; j++)
                 {
                     dataScriptableObject.stageContents[i].stageProgressFlags[j] = true;
                 }
@@ -214,7 +256,7 @@ public class StageRoot : MonoBehaviour
             if (dataScriptableObject.selectStageValue == dataScriptableObject.stageContents[i].stageValue)
             {
                 gameOverImage.sprite = dataScriptableObject.stageContents[i].gameOverSpritesValue[value];
-                for (int j = 0; j < value+1; j++)
+                for (int j = 0; j < value + 1; j++)
                 {
                     dataScriptableObject.stageContents[i].stageProgressFlags[j] = true;
                 }
@@ -233,7 +275,7 @@ public class StageRoot : MonoBehaviour
         StartCoroutine(LoadYourAsyncScene("StageSelect"));
         Time.timeScale = 1;
     }
-    
+
     public void ButtonRetry()
     {
         if (isButtonGo)
@@ -298,5 +340,27 @@ public class StageRoot : MonoBehaviour
     public void GorillaMusouStart()
     {
         isGorillaMusou = true;
+        timer = stage4CameraAllTime;
+    }
+
+    public void CameraShake()
+    {
+        posBeforeShaking = cameraTransform.position;
+        isCameraShake = true;
+        shakeTimer = shakeTime;
+        StartCoroutine(Shake(shakeTime / 2, 0.6f));
+    }
+    public IEnumerator Shake(float duration, float magnitude)
+    {
+        Vector3 originalPosition = transform.position;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            transform.position = originalPosition + UnityEngine.Random.insideUnitSphere * magnitude;
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = originalPosition;
     }
 }
