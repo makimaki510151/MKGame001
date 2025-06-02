@@ -11,8 +11,11 @@ public class ShadowAndGorilla : MonoBehaviour
     private float fallingTime = 6.5f;
     [SerializeField]
     private float speed = 1f;
+    [SerializeField]
+    private Vector2 direction = new(1, 0);
 
     private Transform myTransform = null;
+    private Rigidbody2D myRigidbody = null;
     [NonSerialized]
     public bool isFalling = true;
 
@@ -21,6 +24,7 @@ public class ShadowAndGorilla : MonoBehaviour
     void Start()
     {
         myTransform = transform;
+        myRigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -34,7 +38,7 @@ public class ShadowAndGorilla : MonoBehaviour
             if (myTransform.localScale.x > fallingTime)
             {
                 Vector3 tempPos = gorillaTransform.localPosition;
-                tempPos.y -= 10;
+                tempPos.y -= 5;
                 gorillaTransform.localPosition = tempPos;
                 if (gorillaTransform.localPosition.y == 0)
                 {
@@ -45,7 +49,15 @@ public class ShadowAndGorilla : MonoBehaviour
         }
         else
         {
-            myTransform.position = new(myTransform.position.x + speed * Time.deltaTime, myTransform.position.y);
+            myRigidbody.velocity = direction * speed * Time.deltaTime;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Goal")
+        {
+            StageRoot.Instance.GorillaMusouEnd();
+            Destroy(gameObject);
         }
     }
 }

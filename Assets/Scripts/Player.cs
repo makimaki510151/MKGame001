@@ -405,6 +405,7 @@ public class Player : MonoBehaviour
                     invertCount++;
                     break;
                 case "Stage4Gimmick":
+                    collision.gameObject.SetActive(false);
                     isStage4Gimmick = true;
                     StageRoot.Instance.GorillaMusouStart();
                     break;
@@ -422,5 +423,10 @@ public class Player : MonoBehaviour
     public void IsPauseChange(bool value)
     {
         isPause = value;
+    }
+
+    public void IsStage4GimmickFalse()
+    {
+        isStage4Gimmick = false;
     }
 }

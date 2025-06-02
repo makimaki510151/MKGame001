@@ -363,4 +363,10 @@ public class StageRoot : MonoBehaviour
         }
         transform.position = originalPosition;
     }
+
+    public void GorillaMusouEnd()
+    {
+        isGorillaMusou = false;
+        playerSpript.IsStage4GimmickFalse();
+    }
 }

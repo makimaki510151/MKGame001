@@ -14,6 +14,7 @@ TagManager:
   - Item
   - Damage
   - Stage4Gimmick
+  - Gorilla
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - FallingObject
   - Wall
   - SlipThrough
-  - 
-  - 
+  - Gorilla
+  - Shadow
   - 
   - 
   - 
