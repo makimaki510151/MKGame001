@@ -17,7 +17,10 @@ public class ShadowAndGorilla : MonoBehaviour
     private Transform myTransform = null;
     private Rigidbody2D myRigidbody = null;
     [NonSerialized]
-    public bool isFalling = true;
+    public int phase = 0;
+    [SerializeField]
+    private float stopTime = 0.5f;
+    private float timer = 1;
 
 
     // Start is called before the first frame update
@@ -30,7 +33,7 @@ public class ShadowAndGorilla : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isFalling)
+        if (phase==0)
         {
             float time = Time.deltaTime;
             Vector3 ls = myTransform.localScale;
@@ -42,12 +45,21 @@ public class ShadowAndGorilla : MonoBehaviour
                 gorillaTransform.localPosition = tempPos;
                 if (gorillaTransform.localPosition.y == 0)
                 {
-                    isFalling = false;
+                    phase = 1;
+                    timer = stopTime;
                     StageRoot.Instance.CameraShake();
                 }
             }
         }
-        else
+        else if (phase==1)
+        {
+            timer -= Time.deltaTime;
+            if(timer < 0)
+            {
+                phase = 2;
+            }
+        }
+        else if (phase==2)
         {
             myRigidbody.velocity = direction * speed * Time.deltaTime;
         }

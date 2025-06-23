@@ -168,15 +168,6 @@ public class StageRoot : MonoBehaviour
                     isFallingGorilla = true;
                     shadowAndGorilla = Instantiate(shadowAndGorillaObject, gorillaFallingPos).GetComponent<ShadowAndGorilla>();
                 }
-                if (isCameraShake)
-                {
-                    shakeTimer -= Time.deltaTime;
-                    if(shakeTimer < 0)
-                    {
-                        shadowAndGorilla.isFalling = false;
-                    }
-
-                }
             }
             else
             {

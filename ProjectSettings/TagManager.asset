@@ -15,6 +15,7 @@ TagManager:
   - Damage
   - Stage4Gimmick
   - Gorilla
+  - Pond
   layers:
   - Default
   - TransparentFX

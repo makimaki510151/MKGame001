@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
     private GameObject clickIntervalSliderObject = null;
     [SerializeField, Header("自機が回転する範囲表示のPrefabObject")]
     private GameObject rotationRangeObject = null;
+    [SerializeField, Header("池内の低下速度")]
+    private float pondSpeed = 0.5f;
     [SerializeField, Header("自機が回転する範囲表示の大きさの倍率(変更非推奨)")]
     private float sizeRate = 4;
     [SerializeField, Header("プレイヤーのHP(変更非推奨)")]
@@ -58,6 +60,8 @@ public class Player : MonoBehaviour
     private LineRenderer line = null;
     [SerializeField, Header("右クリック時")]
     private GameObject rClickImageObject = null;
+    [SerializeField,Header("池入った時のレイヤーオブジェクト")]
+    private GameObject pondImageObject = null;
 
     enum DirectionRotation
     {
@@ -408,6 +412,25 @@ public class Player : MonoBehaviour
                     collision.gameObject.SetActive(false);
                     isStage4Gimmick = true;
                     StageRoot.Instance.GorillaMusouStart();
+                    break;
+                case "Pond":
+                    rateNow = pondSpeed;
+                    pondImageObject.SetActive(true);
+                    break;
+            }
+            isBound = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (isBound)
+        {
+            switch (collision.tag)
+            {
+                case "Pond":
+                    rateNow = 1;
+                    pondImageObject.SetActive(false);
                     break;
             }
             isBound = false;
