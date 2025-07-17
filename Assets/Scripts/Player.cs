@@ -62,6 +62,10 @@ public class Player : MonoBehaviour
     private GameObject rClickImageObject = null;
     [SerializeField,Header("池入った時のレイヤーオブジェクト")]
     private GameObject pondImageObject = null;
+    [SerializeField, Header("お茶会エリアのレイヤーオブジェクト")]
+    private GameObject teacupImageObject = null;
+
+
 
     enum DirectionRotation
     {
@@ -417,6 +421,9 @@ public class Player : MonoBehaviour
                     rateNow = pondSpeed;
                     pondImageObject.SetActive(true);
                     break;
+                case "Teacup":
+                    teacupImageObject.SetActive(true);
+                    break;
             }
             isBound = false;
         }
@@ -431,6 +438,9 @@ public class Player : MonoBehaviour
                 case "Pond":
                     rateNow = 1;
                     pondImageObject.SetActive(false);
+                    break;
+                case "Teacup":
+                    teacupImageObject.SetActive(false);
                     break;
             }
             isBound = false;

@@ -6,13 +6,11 @@ using UnityEngine;
 public class Teacup : MonoBehaviour
 {
     [SerializeField]
-    private List<MoveType> moveTypes = new List<MoveType>();
+    private List<MoveType> moveTypes = new();
     [SerializeField]
     private float firstTime = 0f;
 
     private int moveTypeValue = 0;
-
-    private Rigidbody2D myRigidbody2D;
 
     private Vector2 setMoveDirection;
     private float setMoveSpeed;
@@ -21,12 +19,11 @@ public class Teacup : MonoBehaviour
 
     void Start()
     {
-        myRigidbody2D = GetComponent<Rigidbody2D>();
         MoveSet(moveTypes[moveTypeValue]);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (firstTime > 0)
         {
@@ -34,7 +31,7 @@ public class Teacup : MonoBehaviour
             return;
         }
 
-        MoveUpdate(Time.deltaTime);
+        MoveUpdate();
     }
     private void MoveSet(MoveType _moveType)
     {
@@ -43,17 +40,16 @@ public class Teacup : MonoBehaviour
         setMoveTime = _moveType.moveTime;
         setStopTime = _moveType.stopTime;
     }
-    private void MoveUpdate(float deltaTime)
+    private void MoveUpdate()
     {
         if (setMoveTime > 0)
         {
-            setMoveTime -= deltaTime;
-            myRigidbody2D.velocity = setMoveDirection * setMoveSpeed;
+            setMoveTime -= 1;
+            transform.position += (Vector3)(setMoveDirection * setMoveSpeed / 60);
         }
         else
         {
-            myRigidbody2D.velocity = Vector2.zero;
-            setStopTime -= deltaTime;
+            setStopTime -= 1;
             if (setStopTime <= 0)
             {
                 moveTypeValue++;
